@@ -1,0 +1,868 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Capability · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.6.11">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../seccomp/" />
+    
+    
+    <link rel="prev" href="../namespace/chroot-and-pivot_root.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../namespace/">
+            
+                <a href="../namespace/">
+            
+                    
+                    Namespace
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../namespace/uts.html">
+            
+                <a href="../namespace/uts.html">
+            
+                    
+                    UTS Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../namespace/pid.html">
+            
+                <a href="../namespace/pid.html">
+            
+                    
+                    PID Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../namespace/mount.html">
+            
+                <a href="../namespace/mount.html">
+            
+                    
+                    Mount Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../namespace/user.html">
+            
+                <a href="../namespace/user.html">
+            
+                    
+                    User Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../namespace/chroot-and-pivot_root.html">
+            
+                <a href="../namespace/chroot-and-pivot_root.html">
+            
+                    
+                    chroot and pivot_root
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Capability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../seccomp/">
+            
+                <a href="../seccomp/">
+            
+                    
+                    Seccomp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../apparmor/">
+            
+                <a href="../apparmor/">
+            
+                    
+                    AppArmor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../cgroup/README.md">
+            
+                <span>
+            
+                    
+                    cgroup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../security/">
+            
+                <a href="../security/">
+            
+                    
+                    Security
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../security/privileged-container.md">
+            
+                <span>
+            
+                    
+                    Privileged Container
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1.1" data-path="../security/call_usermode_helper_exec_function.html">
+            
+                <a href="../security/call_usermode_helper_exec_function.html">
+            
+                    
+                    call_usermodehelper_exec()
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../security/senseitive-file-mount.md">
+            
+                <span>
+            
+                    
+                    Sensitive file mount
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.2.1" data-path="../security/mount-docker-socket.html">
+            
+                <a href="../security/mount-docker-socket.html">
+            
+                    
+                    Docker Socket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.2" data-path="../security/mount-procfs.html">
+            
+                <a href="../security/mount-procfs.html">
+            
+                    
+                    procfs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.3" data-path="../security/mount-sysfs.html">
+            
+                <a href="../security/mount-sysfs.html">
+            
+                    
+                    sysfs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../security/DoS.html">
+            
+                <a href="../security/DoS.html">
+            
+                    
+                    DoS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.3.1" data-path="../security/file-descripter.html">
+            
+                <a href="../security/file-descripter.html">
+            
+                    
+                    File Descripter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.2" data-path="../security/fork-bomb.html">
+            
+                <a href="../security/fork-bomb.html">
+            
+                    
+                    Fork Bomb
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.3" data-path="../security/disk-pressure.html">
+            
+                <a href="../security/disk-pressure.html">
+            
+                    
+                    Disk Pressure
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../security/adding-a-user-to-group.html">
+            
+                <a href="../security/adding-a-user-to-group.html">
+            
+                    
+                    Adding a user to group
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.4.1" data-path="../security/adding-a-user-to-docker-group.html">
+            
+                <a href="../security/adding-a-user-to-docker-group.html">
+            
+                    
+                    docker Group
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4.2" data-path="../security/adding-a-user-to-lxd-group.html">
+            
+                <a href="../security/adding-a-user-to-lxd-group.html">
+            
+                    
+                    lxd Group
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../security/apparmor-bypass.md">
+            
+                <span>
+            
+                    
+                    AppArmor Bypass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../security/seccomp-bypass.md">
+            
+                <span>
+            
+                    
+                    seccomp Bypass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../security/image/">
+            
+                <a href="../security/image/">
+            
+                    
+                    Docker Image Security
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.7.1" data-path="../security/setuid-binary.html">
+            
+                <a href="../security/setuid-binary.html">
+            
+                    
+                    setuid binary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.2" data-path="../security/secrets-in-layer.html">
+            
+                <a href="../security/secrets-in-layer.html">
+            
+                    
+                    Secrets in Layer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.3" data-path="../security/image/scanner.html">
+            
+                <a href="../security/image/scanner.html">
+            
+                    
+                    Image Scanner
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.4" data-path="../security/image/registry.html">
+            
+                <a href="../security/image/registry.html">
+            
+                    
+                    Docker Registry
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../hardening/">
+            
+                <a href="../hardening/">
+            
+                    
+                    Hardenining Container
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../hardening/apparmor.html">
+            
+                <a href="../hardening/apparmor.html">
+            
+                    
+                    AppArmor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../hardening/seccomp.html">
+            
+                <a href="../hardening/seccomp.html">
+            
+                    
+                    seccomp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../hardening/runtime.html">
+            
+                <a href="../hardening/runtime.html">
+            
+                    
+                    runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../hardening/monitoring.html">
+            
+                <a href="../hardening/monitoring.html">
+            
+                    
+                    Monitoring
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../kubernetes/">
+            
+                <a href="../kubernetes/">
+            
+                    
+                    Kubernetes Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Capability</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="capability">Capability</h1>
+<p>Linux &#x306B;&#x306F; Capability &#x3068;&#x547C;&#x3070;&#x308C;&#x308B;&#x4ED5;&#x7D44;&#x307F;&#x304C;&#x3042;&#x308A;&#x3001;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x53CA;&#x3073;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x6A29;&#x9650;&#x3092;&#x7D30;&#x304B;&#x304F;&#x8A2D;&#x5B9A;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;  </p>
+<p>&#x4F8B;&#x3048;&#x3070;&#x30DD;&#x30FC;&#x30C8;&#x756A;&#x53F7;&#x304C;1024&#x4EE5;&#x4E0B;&#x3067; Listen &#x3059;&#x308B;&#x5834;&#x5408;&#x306F;&#x7279;&#x6A29;&#x304C;&#x5FC5;&#x8981;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;&#x3064;&#x307E;&#x308A; root &#x3068;&#x3057;&#x3066;&#x8D77;&#x52D5;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308B;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001; <code>CAP_NET_BIND_SERVICE</code> &#x3068;&#x3044;&#x3046; Capability &#x3092;&#x4E0E;&#x3048;&#x308B;&#x3053;&#x3068;&#x3067;&#x8D77;&#x52D5;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>ubuntu@docker:~$ cp $(which python3) mypython3
+# Capability &#x304C;&#x306A;&#x3044;&#x306E;&#x3067;80&#x756A;&#x30DD;&#x30FC;&#x30C8;&#x3067; Listen &#x3067;&#x304D;&#x306A;&#x3044;
+ubuntu@docker:~$ getcap mypython3
+ubuntu@docker:~$ ./mypython3 -m http.server 80
+Traceback (most recent call last):
+  File &quot;/usr/lib/python3.8/runpy.py&quot;, line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File &quot;/usr/lib/python3.8/runpy.py&quot;, line 87, in _run_code
+    exec(code, run_globals)
+  File &quot;/usr/lib/python3.8/http/server.py&quot;, line 1294, in &lt;module&gt;
+    test(
+  File &quot;/usr/lib/python3.8/http/server.py&quot;, line 1249, in test
+    with ServerClass(addr, HandlerClass) as httpd:
+  File &quot;/usr/lib/python3.8/socketserver.py&quot;, line 452, in __init__
+    self.server_bind()
+  File &quot;/usr/lib/python3.8/http/server.py&quot;, line 1292, in server_bind
+    return super().server_bind()
+  File &quot;/usr/lib/python3.8/http/server.py&quot;, line 138, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File &quot;/usr/lib/python3.8/socketserver.py&quot;, line 466, in server_bind
+    self.socket.bind(self.server_address)
+PermissionError: [Errno 13] Permission denied
+
+# Capability &#x3092;&#x4ED8;&#x4E0E;&#x3057;&#x305F;&#x306E;&#x3067; Listen &#x3067;&#x304D;&#x308B;
+ubuntu@docker:~$ sudo setcap &apos;cap_net_bind_service=+ep&apos; ./mypython3
+ubuntu@docker:~$ ./mypython3 -m http.server 80
+Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
+</code></pre><p>Docker &#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x3067;&#x306F; <code>--cap-add</code> &#x3084; <code>--cap-drop</code> &#x3092;&#x5229;&#x7528;&#x3057;&#x3066; Capability &#x3092;&#x4ED8;&#x4E0E;&#x3057;&#x305F;&#x308A;&#x524A;&#x9664;&#x3057;&#x305F;&#x308A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;<br>[ping &#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306E;&#x5B9F;&#x884C;&#x306F; CAP_NET_RAW &#x304C;&#x5FC5;&#x8981;][1]&#x306A;&#x306E;&#x3067;&#x3001;drop &#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x5B9F;&#x884C;&#x3067;&#x304D;&#x306A;&#x3044;&#x3053;&#x3068;&#x304C;&#x78BA;&#x8A8D;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>$ docker run --rm -it ubuntu:latest bash
+root@4e89e243ccee:/# apt-get -qq update ; apt-get -qq -y install iputils-ping
+root@4e89e243ccee:/# ps
+root@4e89e243ccee:/# getpcaps 1
+1: = cap_chown,cap_dac_override,cap_fowner,cap_fsetid,cap_kill,cap_setgid,cap_setuid,cap_setpcap,cap_net_bind_service,cap_net_raw,cap_sys_chroot,cap_mknod,cap_audit_write,cap_setfcap+eip
+root@4e89e243ccee:/# ping -c 1 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=113 time=17.9 ms
+
+$ docker run --cap-drop net_raw --rm -it ubuntu:latest bash
+root@31bb88ca04f8:/# apt-get -qq update ; apt-get -qq -y install iputils-ping
+root@31bb88ca04f8:/# ps
+root@31bb88ca04f8:/# getpcaps 1
+1: = cap_chown,cap_dac_override,cap_fowner,cap_fsetid,cap_kill,cap_setgid,cap_setuid,cap_setpcap,cap_net_bind_service,cap_sys_chroot,cap_mknod,cap_audit_write,cap_setfcap+eiproot@31bb88ca04f8:/# ping 8.8.8.8
+root@4e89e243ccee:/# ping 8.8.8.8
+bash: /usr/bin/ping: Operation not permitted
+</code></pre><p>Capability &#x306F;&#x6570;&#x591A;&#x304F;&#x3042;&#x308A;&#x3001;&#x4E2D;&#x306B;&#x306F;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x304B;&#x3089;&#x30DB;&#x30B9;&#x30C8;&#x306B;&#x5F71;&#x97FF;&#x3092;&#x53CA;&#x307C;&#x3059;&#x3082;&#x306E;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;<br>&#x305D;&#x306E;&#x305F;&#x3081;&#x3001;&#x904E;&#x5270;&#x306A; Capability &#x306E;&#x4ED8;&#x4E0E;&#x306F; Breakout &#x306E;&#x539F;&#x56E0;&#x3068;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x7C21;&#x5358;&#x306A;&#x4F8B;&#x3068;&#x3057;&#x3066; <code>CAP_SYSLOG</code> &#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;&#x3053;&#x308C;&#x3092;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x306B;&#x4ED8;&#x4E0E;&#x3059;&#x308B;&#x3068; <code>dmesg</code> &#x7D4C;&#x7531;&#x3067;&#x30AB;&#x30FC;&#x30CD;&#x30EB;&#x306E;&#x30ED;&#x30B0;&#x3092;&#x53D6;&#x5F97;&#x53CA;&#x3073;&#x6D88;&#x53BB;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;  </p>
+<pre><code>ubuntu@docker:~$ docker run --cap-add syslog --rm -it ubuntu:20.04
+root@1577bebb133d:/# dmesg | head
+[    0.000000] Linux version 5.4.0-47-generic (buildd@lcy01-amd64-014) (gcc version 9.3.0 (Ubuntu 9.3.0-10ubuntu2)) #51-Ubuntu SMP Fri Sep 4 19:50:52 UTC 2020 (Ubuntu 5.4.0-47.51-generic 5.4.55)
+[    0.000000] Command line: earlyprintk=serial console=ttyS0 root=/dev/vda1 rw panic=1 no_timer_check
+[    0.000000] KERNEL supported cpus:
+[    0.000000]   Intel GenuineIntel
+[    0.000000]   AMD AuthenticAMD
+[    0.000000]   Hygon HygonGenuine
+[    0.000000]   Centaur CentaurHauls
+[    0.000000]   zhaoxin   Shanghai
+[    0.000000] x86/fpu: Supporting XSAVE feature 0x001: &apos;x87 floating point registers&apos;
+[    0.000000] x86/fpu: Supporting XSAVE feature 0x002: &apos;SSE registers&apos;
+root@1577bebb133d:/# dmesg -C
+root@1577bebb133d:/# dmesg
+</code></pre><p>Docker &#x3084; LXC &#x306A;&#x3069;&#x3067;&#x306F;&#x3053;&#x306E;&#x3088;&#x3046;&#x306A;&#x5371;&#x967A;&#x306A; Capability &#x3092;[&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;][2]&#x3067;&#x4ED8;&#x4E0E;&#x3057;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;<br>&#x5371;&#x967A;&#x306A; Capability &#x3092;&#x4E0E;&#x3048;&#x305F;&#x5834;&#x5408;&#x306B;&#x751F;&#x3058;&#x308B;&#x8106;&#x5F31;&#x6027;&#x306B;&#x3064;&#x3044;&#x3066;&#x306F; TODO &#x3092;&#x3054;&#x53C2;&#x7167;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<p>[1] <a href="https://blog.ssrf.in/post/ping-does-not-require-cap-net-raw-capability/" target="_blank">https://blog.ssrf.in/post/ping-does-not-require-cap-net-raw-capability/</a> &quot;net.ipv4.ping_group_range &#x3092;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x3068; CAP_NET_RAW &#x306F;&#x5FC5;&#x8981;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&quot;
+[2] <a href="https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities" target="_blank">https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities</a> &quot;Runtime privilege and Linux capabilities / docker docs&quot;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../namespace/chroot-and-pivot_root.html" class="navigation navigation-prev " aria-label="Previous page: chroot and pivot_root">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../seccomp/" class="navigation navigation-next " aria-label="Next page: Seccomp">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Capability","level":"1.4","depth":1,"next":{"title":"Seccomp","level":"1.5","depth":1,"path":"seccomp/README.md","ref":"seccomp/README.md","articles":[]},"previous":{"title":"chroot and pivot_root","level":"1.3","depth":1,"path":"namespace/chroot-and-pivot_root.md","ref":"namespace/chroot-and-pivot_root.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"capability/README.md","mtime":"2020-11-13T07:54:10.115Z","type":"markdown"},"gitbook":{"version":"3.6.11","time":"2020-11-13T09:49:07.239Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

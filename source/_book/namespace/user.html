@@ -1,0 +1,826 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>User Namespace · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.6.11">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chroot-and-pivot_root.html" />
+    
+    
+    <link rel="prev" href="mount.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Namespace
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="uts.html">
+            
+                <a href="uts.html">
+            
+                    
+                    UTS Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="pid.html">
+            
+                <a href="pid.html">
+            
+                    
+                    PID Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="mount.html">
+            
+                <a href="mount.html">
+            
+                    
+                    Mount Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4" data-path="user.html">
+            
+                <a href="user.html">
+            
+                    
+                    User Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="chroot-and-pivot_root.html">
+            
+                <a href="chroot-and-pivot_root.html">
+            
+                    
+                    chroot and pivot_root
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../capability/">
+            
+                <a href="../capability/">
+            
+                    
+                    Capability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../seccomp/">
+            
+                <a href="../seccomp/">
+            
+                    
+                    Seccomp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../apparmor/">
+            
+                <a href="../apparmor/">
+            
+                    
+                    AppArmor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../cgroup/README.md">
+            
+                <span>
+            
+                    
+                    cgroup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../security/">
+            
+                <a href="../security/">
+            
+                    
+                    Security
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../security/privileged-container.md">
+            
+                <span>
+            
+                    
+                    Privileged Container
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1.1" data-path="../security/call_usermode_helper_exec_function.html">
+            
+                <a href="../security/call_usermode_helper_exec_function.html">
+            
+                    
+                    call_usermodehelper_exec()
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../security/senseitive-file-mount.md">
+            
+                <span>
+            
+                    
+                    Sensitive file mount
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.2.1" data-path="../security/mount-docker-socket.html">
+            
+                <a href="../security/mount-docker-socket.html">
+            
+                    
+                    Docker Socket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.2" data-path="../security/mount-procfs.html">
+            
+                <a href="../security/mount-procfs.html">
+            
+                    
+                    procfs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.3" data-path="../security/mount-sysfs.html">
+            
+                <a href="../security/mount-sysfs.html">
+            
+                    
+                    sysfs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../security/DoS.html">
+            
+                <a href="../security/DoS.html">
+            
+                    
+                    DoS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.3.1" data-path="../security/file-descripter.html">
+            
+                <a href="../security/file-descripter.html">
+            
+                    
+                    File Descripter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.2" data-path="../security/fork-bomb.html">
+            
+                <a href="../security/fork-bomb.html">
+            
+                    
+                    Fork Bomb
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.3" data-path="../security/disk-pressure.html">
+            
+                <a href="../security/disk-pressure.html">
+            
+                    
+                    Disk Pressure
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../security/adding-a-user-to-group.html">
+            
+                <a href="../security/adding-a-user-to-group.html">
+            
+                    
+                    Adding a user to group
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.4.1" data-path="../security/adding-a-user-to-docker-group.html">
+            
+                <a href="../security/adding-a-user-to-docker-group.html">
+            
+                    
+                    docker Group
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4.2" data-path="../security/adding-a-user-to-lxd-group.html">
+            
+                <a href="../security/adding-a-user-to-lxd-group.html">
+            
+                    
+                    lxd Group
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../security/apparmor-bypass.md">
+            
+                <span>
+            
+                    
+                    AppArmor Bypass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../security/seccomp-bypass.md">
+            
+                <span>
+            
+                    
+                    seccomp Bypass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../security/image/">
+            
+                <a href="../security/image/">
+            
+                    
+                    Docker Image Security
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.7.1" data-path="../security/setuid-binary.html">
+            
+                <a href="../security/setuid-binary.html">
+            
+                    
+                    setuid binary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.2" data-path="../security/secrets-in-layer.html">
+            
+                <a href="../security/secrets-in-layer.html">
+            
+                    
+                    Secrets in Layer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.3" data-path="../security/image/scanner.html">
+            
+                <a href="../security/image/scanner.html">
+            
+                    
+                    Image Scanner
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.4" data-path="../security/image/registry.html">
+            
+                <a href="../security/image/registry.html">
+            
+                    
+                    Docker Registry
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../hardening/">
+            
+                <a href="../hardening/">
+            
+                    
+                    Hardenining Container
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../hardening/apparmor.html">
+            
+                <a href="../hardening/apparmor.html">
+            
+                    
+                    AppArmor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../hardening/seccomp.html">
+            
+                <a href="../hardening/seccomp.html">
+            
+                    
+                    seccomp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../hardening/runtime.html">
+            
+                <a href="../hardening/runtime.html">
+            
+                    
+                    runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../hardening/monitoring.html">
+            
+                <a href="../hardening/monitoring.html">
+            
+                    
+                    Monitoring
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../kubernetes/">
+            
+                <a href="../kubernetes/">
+            
+                    
+                    Kubernetes Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >User Namespace</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="user-namespace">User Namespace</h1>
+<p>User Namespace &#x306F; UID / GID &#x3092;&#x5206;&#x96E2;&#x3057;&#x3001; Namespace &#x5185;&#x3067;&#x72EC;&#x7ACB;&#x3057;&#x305F; UID / GID &#x3092;&#x6301;&#x3066;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;<br>&#x307E;&#x305F;&#x3001;Namespace &#x5185;&#x306E; UID / GID &#x304C;&#x305D;&#x308C;&#x305E;&#x308C;&#x30DB;&#x30B9;&#x30C8;&#x5074;&#x306E; UID / GID &#x3068; mapping &#x3055;&#x308C;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x4F8B;&#x3048;&#x3070; Namespace &#x5185;&#x3067;&#x306F; UID 0 (root) &#x3067;&#x3042;&#x3063;&#x3066;&#x3082;&#x3001;&#x30DB;&#x30B9;&#x30C8;&#x5074;&#x304B;&#x3089;&#x898B;&#x308B;&#x3068; UID 1000 &#x306E;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x3067;&#x3042;&#x308B;&#x3088;&#x3046;&#x306B;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;<br>&#x3053;&#x308C;&#x306B;&#x3088;&#x308A;&#x4EEE;&#x306B;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x304B;&#x3089;&#x30DB;&#x30B9;&#x30C8;&#x5074;&#x306B;&#x30A8;&#x30B9;&#x30B1;&#x30FC;&#x30D7;&#x3067;&#x304D;&#x3066;&#x3082;&#x3001;&#x6A29;&#x9650;&#x306F; UID 1000 &#x306E;&#x4E00;&#x822C;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x3067;&#x3042;&#x308B;&#x305F;&#x3081;&#x3001;&#x5F71;&#x97FF;&#x3092;&#x5C0F;&#x3055;&#x304F;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p><code>unshare(1)</code> &#x3067;&#x306F; <code>--user</code> &#x30D5;&#x30E9;&#x30B0;&#x3092;&#x7528;&#x3044;&#x308B;&#x3053;&#x3068;&#x3067; User Namespace &#x3092;&#x4F5C;&#x6210;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;  </p>
+<pre><code>ubuntu@docker:~$ unshare --user bash
+nobody@docker:~$ id
+uid=65534(nobody) gid=65534(nogroup) groups=65534(nogroup)
+nobody@docker:~$ echo $$
+2275
+</code></pre><p>&#x73FE;&#x5728;&#x3001;&#x540D;&#x524D;&#x7A7A;&#x9593;&#x5185;&#x3067;&#x306F; <code>nobody</code> &#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;<br>&#x8A66;&#x3057;&#x306B;&#x30DB;&#x30B9;&#x30C8;&#x5074;&#x306E; UID 1000 &#x306E;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x3068; Namespace &#x5185;&#x306E; UID 0 (root) &#x306E;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x3092;&#x7D10;&#x4ED8;&#x3051;&#x3066;&#x307F;&#x307E;&#x3059;&#x3002;
+&#x7D10;&#x4ED8;&#x3051;&#x306F;&#x5BFE;&#x8C61;&#x306E;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x304C;&#x6301;&#x3064; <code>uid_map</code> &#x306B;&#x5024;&#x3092;&#x66F8;&#x304D;&#x8FBC;&#x3080;&#x3053;&#x3068;&#x3067;&#x6A5F;&#x80FD;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code># &#x30DB;&#x30B9;&#x30C8;&#x5074;&#x3067;&#x64CD;&#x4F5C;
+root@docker:/home/ubuntu# echo &apos;0 1000 1&apos; &gt; /proc/2275/uid_map
+</code></pre><p>&#x540D;&#x524D;&#x7A7A;&#x9593;&#x5185;&#x3067;&#x78BA;&#x8A8D;&#x3059;&#x308B;&#x3068; UID 0 (root) &#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x78BA;&#x8A8D;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>nobody@docker:~$ id
+uid=0(root) gid=65534(nogroup) groups=65534(nogroup)
+</code></pre><p>&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;&#x3068;&#x540D;&#x524D;&#x7A7A;&#x9593;&#x5185;&#x3067;&#x306F; root &#x6240;&#x6709;&#x306B;&#x898B;&#x3048;&#x307E;&#x3059;&#x304C;&#x3001;&#x5B9F;&#x969B;&#x306B;&#x306F; UID 1000 &#x3067;&#x3042;&#x308B; <code>ubuntu</code> &#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306E;&#x6240;&#x6709;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x78BA;&#x8A8D;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>nobody@docker:~$ touch test.txt
+nobody@docker:~$ ls -al test.txt
+-rw-rw-r-- 1 root nogroup 0 Nov 13 14:10 test.txt
+
+# &#x30DB;&#x30B9;&#x30C8;&#x5074;&#x3067;&#x64CD;&#x4F5C;
+ubuntu@docker:~$ ls -al test.txt
+-rw-rw-r-- 1 ubuntu ubuntu 0 Nov 13 14:10 test.txt
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="mount.html" class="navigation navigation-prev " aria-label="Previous page: Mount Namespace">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="chroot-and-pivot_root.html" class="navigation navigation-next " aria-label="Next page: chroot and pivot_root">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"User Namespace","level":"1.2.4","depth":2,"next":{"title":"chroot and pivot_root","level":"1.3","depth":1,"path":"namespace/chroot-and-pivot_root.md","ref":"namespace/chroot-and-pivot_root.md","articles":[]},"previous":{"title":"Mount Namespace","level":"1.2.3","depth":2,"path":"namespace/mount.md","ref":"namespace/mount.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"namespace/user.md","mtime":"2020-11-13T05:11:38.041Z","type":"markdown"},"gitbook":{"version":"3.6.11","time":"2020-11-13T09:49:07.239Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
