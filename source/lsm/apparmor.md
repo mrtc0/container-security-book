@@ -31,7 +31,7 @@ mybash-5.0$ echo test >> /etc/hosts
 mybash: /etc/hosts: Permission denied
 ```
 
-Docker コンテナにも [`default-docker` というプロファイル名][1]で適用されており、多層防御の一つとして機能します。
+Docker コンテナにも `default-docker` というプロファイル名で適用されており、多層防御の一つとして機能します。[^1]
 
 ```sh
 $ sudo aa-status | grep docker
@@ -52,5 +52,6 @@ root@110e911e07bc:/#
 
 コンテナ上で動くアプリケーションに対応したカスタムプロファイルを作成することで、コンテナをより強固にすることができます。
 
+---
 
-[1]: https://github.com/moby/moby/blob/master/contrib/apparmor/template.go "https://github.com/moby/moby/blob/master/contrib/apparmor/template.go"
+[^1]: https://github.com/moby/moby/blob/master/contrib/apparmor/template.go

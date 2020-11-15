@@ -73,7 +73,7 @@ chroot はルートディレクトリを変更するものでしたが、pivot_r
 つまり、現在のプロセスのルートファイルシステムを別の場所にマウントし、新しいルートファイルシステムを `/` にマウントすることができます。  
 全く別のものにすり替えてしまうものなので、脱獄のしようがありません。また、古いルートファイルシステムを unmount することも可能です。  
 
-ただし、pivot_root をするには次の[条件][1]を満たす必要があります。
+ただし、pivot_root をするには次の条件を満たす必要があります。[^1]
 
 * 新しいファイルシステム(new_root)と元のファイルシステム(put_old)は現在のルートファイルシステムと同じマウントポイントにあってはいけない
 * put_old は new_root の配下になければならない
@@ -107,4 +107,6 @@ group           modprobe.d      os-release      services
 hostname        modules         passwd          shadow
 ```
 
-[1]: https://man7.org/linux/man-pages/man2/pivot_root.2.html "その他の条件など、詳しくは man を参照ください"
+---
+
+[^1]: その他の条件など、詳しくは man https://man7.org/linux/man-pages/man2/pivot_root.2.html を参照ください

@@ -35,7 +35,7 @@ Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
 ```
 
 Docker コンテナでは `--cap-add` や `--cap-drop` を利用して Capability を付与したり削除したりできます。  
-[ping コマンドの実行は CAP_NET_RAW が必要][1]なので、drop することで実行できないことが確認できます。
+ping コマンドの実行は CAP_NET_RAW が必要なので、drop することで実行できないことが確認できます。[^1]
 
 ```sh
 $ docker run --rm -it ubuntu:latest bash
@@ -78,8 +78,10 @@ root@1577bebb133d:/# dmesg -C
 root@1577bebb133d:/# dmesg
 ```
 
-Docker や LXC などではこのような危険な Capability を[デフォルト][2]で付与しないようになっています。  
-危険な Capability を与えた場合に生じる脆弱性については TODO をご参照ください。
+Docker や LXC などではこのような危険な Capability をデフォルトで付与しないようになっています。[^2]  
+危険な Capability を与えた場合に生じる脆弱性については[ホストへのエスケープ](../security/breakout-to-host.md)をご参照ください。
 
-[1] https://blog.ssrf.in/post/ping-does-not-require-cap-net-raw-capability/ "net.ipv4.ping_group_range を指定すると CAP_NET_RAW は必要ありません"
-[2] https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities "Runtime privilege and Linux capabilities / docker docs"
+---
+
+* [^1] https://blog.ssrf.in/post/ping-does-not-require-cap-net-raw-capability/ "net.ipv4.ping_group_range を指定すると CAP_NET_RAW は必要ありません"
+* [^2] https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities "Runtime privilege and Linux capabilities / docker docs"

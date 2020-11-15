@@ -32,7 +32,7 @@ Successfully tagged test:latest
 * Layer 2 ... `RUN echo "secret" > /secret.txt`
 * Layer 3 ... `RUN rm /secret.txt`
 
-より視覚的に確認するために [dive](https://github.com/wagoodman/dive) を使ってみると、確かに3つのレイヤであることを確認できます。
+より視覚的に確認するために [dive](https://github.com/wagoodman/dive) を使ってみると、確かに3つのレイヤであることを確認できます。[^1]
 
 ```
 $ dive test
@@ -107,9 +107,10 @@ $ cat secret.txt
 secret
 ```
 
-上記のようなケースを防ぐために、機密情報は環境変数で渡したりするようにしましょう。
+上記のようなケースを防ぐために、機密情報は環境変数で渡したりするようにしましょう。[^2][^3]
 
-# References
+---
 
-* [https://docs.docker.com/engine/swarm/secrets/](https://docs.docker.com/engine/swarm/secrets/)
-* [https://docs.docker.com/develop/develop-images/build_enhancements/](https://docs.docker.com/develop/develop-images/build_enhancements/)
+[^1]: https://github.com/wagoodman/dive
+[^2]: https://docs.docker.com/engine/swarm/secrets/
+[^3]: https://docs.docker.com/develop/develop-images/build_enhancements/

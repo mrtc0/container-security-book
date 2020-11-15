@@ -39,9 +39,14 @@ daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
 bin:x:2:2:bin:/bin:/usr/sbin/nologin
 ```
 
-## procfs
+## procfs と sysfs
 
-procfs にはホスト側へのエスケープにつながるファイルだけでなく、ホストの情報漏洩にもつながるファイルもあります。  
+procfs や sysfs はカーネルパラメータを設定したりできる機能が提供されているため、これらを利用してホスト側にエスケープしたり、ホスト側の情報を引き出すことができます。  
+Docker や LXC では、このような特定のファイルは ReadOnly あるいは `/dev/null` としてマウントされていますが、もしアクセスが可能な場合をみていきます。
+
+![readonly mount](./img/procfs-readonly-mount.png)
+
+### procfs
 
 | ファイル | 概要 |
 |:--------:|:----:|
@@ -52,9 +57,7 @@ procfs にはホスト側へのエスケープにつながるファイルだけ�
 
 上記以外にも `/proc/kcore` や `/proc/kallsyms` など、コンテナから閲覧されない方が良いファイルが多数あります。
 
-## sysfs
-
-sysfs も procfs 同様にホスト側へのエスケープ及び情報漏洩につながるファイルがあります。
+### sysfs
 
 | ファイル | 概要 |
 |:--------:|:----:|

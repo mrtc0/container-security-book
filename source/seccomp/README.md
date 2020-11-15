@@ -20,7 +20,9 @@ root@ab9ad7d57f7f:/# mkdir /tmp/test
 mkdir: cannot create directory '/tmp/test': Operation not permitted
 ```
 
-Capability と同様に seccomp も Docker には[デフォルトプロファイル][1]が存在します。  
+Capability と同様に seccomp も Docker にはデフォルトプロファイルが存在します。[^1]  
 Capability と併用することで、もし Capability を破られて特権が必要なシステムコールが呼び出されても seccomp で防ぐことができます。
 
-[1] https://docs.docker.com/engine/security/seccomp/ "Significant syscalls blocked by the default profile / docker docs"
+---
+
+[^1] https://docs.docker.com/engine/security/seccomp/ "Significant syscalls blocked by the default profile / docker docs"

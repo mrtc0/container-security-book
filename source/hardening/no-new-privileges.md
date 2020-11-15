@@ -1,6 +1,6 @@
 # No New Privileges
 
-Linux カーネルには [No New Privileges][1] と呼ばれる、子プロセスが新しい特権を取得できないようにする仕組みがあります。
+Linux カーネルには No New Privileges[^1] と呼ばれる、子プロセスが新しい特権を取得できないようにする仕組みがあります。
 
 setuid されたバイナリがコンテナの中にある場合、権限昇格につながる可能性がありますが、docker では `security-opt=no-new-privileges:true` というフラグを付与することで、これを防止できます。
 
@@ -35,4 +35,4 @@ newuser@80f241191a07:/$ id
 uid=1000(newuser) gid=1000(newuser) groups=1000(newuser)
 ```
 
-[1]: https://www.kernel.org/doc/html/latest/userspace-api/no_new_privs.html "https://www.kernel.org/doc/html/latest/userspace-api/no_new_privs.html"
+[^1]: https://www.kernel.org/doc/html/latest/userspace-api/no_new_privs.html "https://www.kernel.org/doc/html/latest/userspace-api/no_new_privs.html"

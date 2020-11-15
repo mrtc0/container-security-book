@@ -7,9 +7,9 @@ Docker イメージにはアプリケーションの動作に必要なソフト�
 
 ## trivy
 
-[https://github.com/aquasecurity/trivy][1]
+* https://github.com/aquasecurity/trivy
 
-trivy はイメージを静的解析し、主要OSのパッケージに加えて bundler や npm などでインストールされているアプリケーションパッケージもスキャン対象に含めることができます。  
+trivy[^1] はイメージを静的解析し、主要OSのパッケージに加えて bundler や npm などでインストールされているアプリケーションパッケージもスキャン対象に含めることができます。  
 他のイメージスキャナと比較して誤検知の少なさなど、正確性も売りとなっています。
 
 ```sh
@@ -47,7 +47,7 @@ Total: 20 (UNKNOWN: 0, LOW: 18, MEDIUM: 2, HIGH: 0, CRITICAL: 0)
 
 ## snyk
 
-[snyk](snyk.io) はアプリケーションライブラリの脆弱性DBを持ち、検知するツールを提供しています。Docker のイメージスキャンに snyk が利用されるようになり、Docker 2.3.6.0 以降は `docker scan` コマンドだけで[イメージスキャンが利用できる][2]ようになっています。  
+[snyk](snyk.io) はアプリケーションライブラリの脆弱性DBを持ち、検知するツールを提供しています。Docker のイメージスキャンに snyk が利用されるようになり、Docker 2.3.6.0 以降は `docker scan` コマンドだけでイメージスキャンが利用できるようになっています。[^2]  
 
 ```sh
 ❯ docker scan ubuntu:latest
@@ -73,9 +73,9 @@ Testing ubuntu:latest...
 
 ## Anchore
 
-[https://github.com/anchore/anchore-engine][3]
+* https://github.com/anchore/anchore-engine
 
-Anchore はイメージの脆弱性を集中管理する機能を持ちます。REST API を通して利用できるためプログラマブルであることが特徴の一つです。
+Anchore[^3] はイメージの脆弱性を集中管理する機能を持ちます。REST API を通して利用できるためプログラマブルであることが特徴の一つです。
 
 ```sh
 ❯ anchore-cli image add docker.io/library/debian:latest
@@ -117,9 +117,9 @@ CVE-2005-2541           tar-1.30+dfsg-6                    Negligible        Non
 
 * https://github.com/anchore/anchore-engine/issues/430
 
-中には[脆弱性報告されたものの未修正のものもある][4]ため、利用ケースを考えて使用したり、イメージスキャナ自体もアップデートしていく必要があります。
+中には脆弱性報告されたものの未修正のものもあるため、利用ケースを考えて使用したり、イメージスキャナ自体もアップデートしていく必要があります。[^4]
 
-[1]: https://github.com/aquasecurity/trivy/ "https://github.com/aquasecurity/trivy/"
-[2]: https://docs.docker.com/engine/scan/ "https://docs.docker.com/engine/scan/"
-[3]: https://github.com/anchore/anchore-engine "https://github.com/anchore/anchore-engine"
-[4]: https://medium.com/@matuzg/testing-docker-cve-scanners-part-2-5-exploiting-cve-scanners-b37766f73005 "Testing docker CVE scanners. Part 2.5 — Exploiting CVE scanners"
+[^1]: https://github.com/aquasecurity/trivy/
+[^2]: https://docs.docker.com/engine/scan/
+[^3]: https://github.com/anchore/anchore-engine
+[^4]: Testing docker CVE scanners. Part 2.5 — Exploiting CVE scanners / https://medium.com/@matuzg/testing-docker-cve-scanners-part-2-5-exploiting-cve-scanners-b37766f73005

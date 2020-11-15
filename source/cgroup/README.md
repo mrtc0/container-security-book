@@ -4,7 +4,7 @@ cgroup はプロセスをグループ化し、そのグループに属するプ�
 cgroup は cgroupfs と呼ばれるファイルシステムを通して操作します。多くは `/sys/fs/cgroup` にマウントされています。
 
 制限できるリソースのことをサブシステムと呼び、CPU のコア数やメモリ使用量、プロセス数などを制限できます。  
-サブシステムは [man][1] をご参照ください。
+サブシステムについては man をご参照ください[^1]。
 
 ## CPU の利用を制限する
 
@@ -102,4 +102,6 @@ $ cat /sys/fs/cgroup/memory/docker/36570f483e8510887b7be178fba3830f1088aa694131c
 104857600
 ```
 
-[1]: https://man7.org/linux/man-pages/man7/cgroups.7.html https://man7.org/linux/man-pages/man7/cgroups.7.html
+---
+
+[^1]: https://man7.org/linux/man-pages/man7/cgroups.7.html
