@@ -8,6 +8,6 @@
 
 # License
 
-この書籍に記述されているすべてのソースコードは、MITライセンスに基づいたオープンソースソフトウェアとして提供されます。  
-また、文章は Creative Commons の Attribution-NonCommercial 4.0（CC BY-NC 4.0）ライセンスに基づいて提供されます。
+この書籍に記述されているすべてのソースコードは MIT ライセンスとします。  
+また、文章は Creative Commons Attribution-NonCommercial 4.0（CC BY-NC 4.0）ライセンスに基づいて提供されます。
 
