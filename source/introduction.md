@@ -70,7 +70,7 @@ Docker イメージに含まれるソフトウェアの脆弱性を検出する�
 
 コンテナをより安全に実行するための方法について紹介します。
 
-## [No New Privilegjes](hardening/no-new-privileges.md)
+## [No New Privileges](hardening/no-new-privileges.md)
 
 子プロセスが特権を獲得しないようにする No New Privileges について紹介します。
 
