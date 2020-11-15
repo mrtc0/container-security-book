@@ -1,0 +1,803 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>CIS Benchmark · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.6.11">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../kubernetes/" />
+    
+    
+    <link rel="prev" href="monitoring.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">はじめに</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction.html">
+            
+                <a href="../introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">コンテナの基礎技術</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../container-basics.html">
+            
+                <a href="../container-basics.html">
+            
+                    
+                    コンテナの基礎技術
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../namespace/">
+            
+                <a href="../namespace/">
+            
+                    
+                    Namespace
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../namespace/uts.html">
+            
+                <a href="../namespace/uts.html">
+            
+                    
+                    UTS Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../namespace/pid.html">
+            
+                <a href="../namespace/pid.html">
+            
+                    
+                    PID Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../namespace/mount.html">
+            
+                <a href="../namespace/mount.html">
+            
+                    
+                    Mount Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../namespace/user.html">
+            
+                <a href="../namespace/user.html">
+            
+                    
+                    User Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../namespace/chroot-and-pivot_root.html">
+            
+                <a href="../namespace/chroot-and-pivot_root.html">
+            
+                    
+                    chroot and pivot_root
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../capability/">
+            
+                <a href="../capability/">
+            
+                    
+                    Capability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../seccomp/">
+            
+                <a href="../seccomp/">
+            
+                    
+                    Seccomp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../lsm/apparmor.html">
+            
+                <a href="../lsm/apparmor.html">
+            
+                    
+                    AppArmor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../cgroup/">
+            
+                <a href="../cgroup/">
+            
+                    
+                    cgroup
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">コンテナのセキュリティと攻撃例</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../security/">
+            
+                <a href="../security/">
+            
+                    
+                    Security
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../security/breakout-to-host.html">
+            
+                <a href="../security/breakout-to-host.html">
+            
+                    
+                    Breakout Container
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../security/sensitive-file-mount.html">
+            
+                <a href="../security/sensitive-file-mount.html">
+            
+                    
+                    Sensitive file mount
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../security/DoS.html">
+            
+                <a href="../security/DoS.html">
+            
+                    
+                    DoS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../security/adding-a-user-to-group.html">
+            
+                <a href="../security/adding-a-user-to-group.html">
+            
+                    
+                    Adding a user to group
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../security/apparmor-bypass.html">
+            
+                <a href="../security/apparmor-bypass.html">
+            
+                    
+                    AppArmor Bypass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../security/seccomp-bypass.html">
+            
+                <a href="../security/seccomp-bypass.html">
+            
+                    
+                    seccomp Bypass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.7" data-path="../security/image/secrets-in-layer.html">
+            
+                <a href="../security/image/secrets-in-layer.html">
+            
+                    
+                    Secrets in Layer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.8" data-path="../security/image/scanner.html">
+            
+                <a href="../security/image/scanner.html">
+            
+                    
+                    Image Scanner
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Hardening Container</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Hardening Container
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="no-new-privileges.html">
+            
+                <a href="no-new-privileges.html">
+            
+                    
+                    No New Privileges
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="apparmor.html">
+            
+                <a href="apparmor.html">
+            
+                    
+                    AppArmor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="seccomp.html">
+            
+                <a href="seccomp.html">
+            
+                    
+                    seccomp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="runtime.html">
+            
+                <a href="runtime.html">
+            
+                    
+                    runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="monitoring.html">
+            
+                <a href="monitoring.html">
+            
+                    
+                    Monitoring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.1.6" data-path="cis-benchmark.html">
+            
+                <a href="cis-benchmark.html">
+            
+                    
+                    CIS Benchmark
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Kubernetes Security</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../kubernetes/">
+            
+                <a href="../kubernetes/">
+            
+                    
+                    Kubernetes Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">References</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../REFERENCES.html">
+            
+                <a href="../REFERENCES.html">
+            
+                    
+                    References
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >CIS Benchmark</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="cis-benchmarks-&#x306B;&#x6E96;&#x62E0;&#x3057;&#x3066;-docker-&#x3092;&#x30BB;&#x30AD;&#x30E5;&#x30A2;&#x306B;&#x3059;&#x308B;">CIS Benchmarks &#x306B;&#x6E96;&#x62E0;&#x3057;&#x3066; Docker &#x3092;&#x30BB;&#x30AD;&#x30E5;&#x30A2;&#x306B;&#x3059;&#x308B;</h1>
+<p>CIS Benchmarks<sup><a href="#fn_1" id="reffn_1">1</a></sup> &#x306F; CIS (Center For Internet Security) &#x3068;&#x3044;&#x3046;&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30CD;&#x30C3;&#x30C8;&#x30FB;&#x30BB;&#x30AD;&#x30E5;&#x30EA;&#x30C6;&#x30A3;&#x306E;&#x6A19;&#x6E96;&#x5316;&#x306B;&#x53D6;&#x308A;&#x7D44;&#x3093;&#x3067;&#x3044;&#x308B;&#x56E3;&#x4F53;&#x304C;&#x767A;&#x884C;&#x3057;&#x3066;&#x3044;&#x308B;&#x30D9;&#x30B9;&#x30C8;&#x30D7;&#x30E9;&#x30AF;&#x30C6;&#x30A3;&#x30B9;&#x306E;&#x30AC;&#x30A4;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x3067;&#x3059;&#x3002;<br>CIS Benchmarks &#x306E;&#x5BFE;&#x8C61;&#x306B;&#x306F; OS &#x306E;&#x4ED6;&#x306B; Apache &#x306A;&#x3069;&#x306E;&#x30DF;&#x30C9;&#x30EB;&#x30A6;&#x30A7;&#x30A2;&#x304C;&#x3042;&#x308A;&#x3001;Docker &#x3082;&#x542B;&#x307E;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;<sup><a href="#fn_2" id="reffn_2">2</a></sup></p>
+<p>CIS Benchmarks &#x306E;&#x7279;&#x5FB4;&#x3068;&#x3057;&#x3066;&#x3001;&#x9805;&#x76EE;&#x306E;&#x691C;&#x67FB;&#x5185;&#x5BB9;&#x3084;&#x5BFE;&#x5FDC;&#x304C;&#x660E;&#x78BA;&#x306A;&#x305F;&#x3081;&#x3001;&#x30C4;&#x30FC;&#x30EB;&#x3068;&#x3057;&#x3066;&#x843D;&#x3068;&#x3057;&#x8FBC;&#x307F;&#x3084;&#x3059;&#x3044;&#x3053;&#x3068;&#x3067;&#x3059;&#x3002;&#x65E2;&#x306B; docker-bench-security<sup><a href="#fn_3" id="reffn_3">3</a></sup> &#x306A;&#x3069;&#x3001;&#x30C4;&#x30FC;&#x30EB;&#x5316;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x3082;&#x306E;&#x304C;&#x3042;&#x308B;&#x305F;&#x3081;&#x3001;&#x6C17;&#x8EFD;&#x306B;&#x8A66;&#x3059;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="docker-bench-security-&#x3067;-cis-benchmark-&#x306B;&#x6E96;&#x62E0;&#x3059;&#x308B;">docker-bench-security &#x3067; CIS Benchmark &#x306B;&#x6E96;&#x62E0;&#x3059;&#x308B;</h2>
+<p>docker-bench-security &#x306F; CIS Docker Benchmark &#x306B;&#x6E96;&#x62E0;&#x3057;&#x3066;&#x3044;&#x308B;&#x304B;&#x3092;&#x78BA;&#x8A8D;&#x3059;&#x308B;&#x30C4;&#x30FC;&#x30EB;&#x3067;&#x3059;&#x3002;<br>&#x5927;&#x304D;&#x304F;&#x5206;&#x3051;&#x3066;&#x6B21;&#x306E;7&#x70B9;&#x3092;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<ol>
+<li>Host Configuration ... Docker daemon &#x3092;&#x5B9F;&#x884C;&#x3057;&#x3066;&#x3044;&#x308B;&#x30DB;&#x30B9;&#x30C8;&#x306E;&#x69CB;&#x6210;</li>
+<li>Docker daemon configuration ... Docker daemon &#x306E;&#x8A2D;&#x5B9A;</li>
+<li>Docker daemon configuration files ... Docker daemon &#x304C;&#x5229;&#x7528;&#x3059;&#x308B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x30D1;&#x30FC;&#x30DF;&#x30C3;&#x30B7;&#x30E7;&#x30F3;&#x306A;&#x3069;&#x306E;&#x69CB;&#x6210;</li>
+<li>Container Images and Build File ... &#x30D3;&#x30EB;&#x30C9;&#x6E08;&#x307F;&#x30A4;&#x30E1;&#x30FC;&#x30B8;&#x306E;&#x30BB;&#x30AD;&#x30E5;&#x30EA;&#x30C6;&#x30A3;</li>
+<li>Container Runtimes ... &#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x30E9;&#x30F3;&#x30BF;&#x30A4;&#x30E0;</li>
+<li>Docker Security Operations ... &#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x904B;&#x7528;&#x306B;&#x304A;&#x3051;&#x308B;&#x30D9;&#x30B9;&#x30C8;&#x30D7;&#x30E9;&#x30AF;&#x30C6;&#x30A3;&#x30B9;</li>
+<li>Docker Swarm Configuration ... Docker Swarm mode &#x306E;&#x8A2D;&#x5B9A;</li>
+</ol>
+<p>&#x5B9F;&#x884C;&#x65B9;&#x6CD5;&#x306F;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306A;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x3001;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x3068;&#x3057;&#x3066;&#x52D5;&#x304B;&#x3059;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">ubuntu@sandbox:~$ docker run -it --net host --pid host --userns host --cap-add audit_control \
+     <span class="hljs-_">-e</span> DOCKER_CONTENT_TRUST=<span class="hljs-variable">$DOCKER_CONTENT_TRUST</span> \
+     -v /etc:/etc:ro \
+     -v /usr/bin/containerd:/usr/bin/containerd:ro \
+     -v /usr/bin/runc:/usr/bin/runc:ro \
+     -v /usr/lib/systemd:/usr/lib/systemd:ro \
+     -v /var/lib:/var/lib:ro \
+     -v /var/run/docker.sock:/var/run/docker.sock:ro \
+     --label docker_bench_security \
+     docker/docker-bench-security
+</code></pre>
+<p>&#x3059;&#x308B;&#x3068;&#x30EC;&#x30DD;&#x30FC;&#x30C8;&#x304C;&#x51FA;&#x529B;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;&#x554F;&#x984C;&#x304C;&#x306A;&#x3051;&#x308C;&#x3070;&#x300C;PASS&#x300D;&#x3068;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x304C;&#x3001;&#x6E96;&#x62E0;&#x3057;&#x3066;&#x3044;&#x306A;&#x3044;&#x5834;&#x5408;&#x306F;&#x300C;WARN&#x300D;&#x3068;&#x51FA;&#x529B;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>[INFO] 1 - Host Configuration
+[WARN] 1.1  - Ensure a separate partition for containers has been created
+[NOTE] 1.2  - Ensure the container host has been Hardened
+[INFO] 1.3  - Ensure Docker is up to date
+[INFO]      * Using 19.03.13, verify is it up to date as deemed necessary
+[INFO]      * Your operating system vendor may provide support and security maintenance for Docker
+[INFO] 1.4  - Ensure only trusted users are allowed to control Docker daemon
+[INFO]      * docker:x:999:ubuntu
+[WARN] 1.5  - Ensure auditing is configured for the Docker daemon
+[WARN] 1.6  - Ensure auditing is configured for Docker files and directories - /var/lib/docker
+[WARN] 1.7  - Ensure auditing is configured for Docker files and directories - /etc/docker
+...
+</code></pre><p>&#x4F8B;&#x3048;&#x3070; <code>1.5 Ensure auditing is configured for the Docker daemon</code> &#x306B;&#x5BFE;&#x5FDC;&#x3059;&#x308B;&#x3068;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br>CIS Benchmark &#x3092;&#x78BA;&#x8A8D;&#x3059;&#x308B;&#x3068;&#x3001;&#x3053;&#x308C;&#x306F; Docker daemon &#x306B;&#x5BFE;&#x3057;&#x3066; audit &#x304C;&#x6709;&#x52B9;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x306A;&#x3044;&#x3053;&#x3068;&#x3092;&#x6307;&#x6458;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;rootless Docker &#x3067;&#x306A;&#x3044;&#x5834;&#x5408;&#x3001;Docker daemon &#x306F; root &#x6A29;&#x9650;&#x3067;&#x52D5;&#x4F5C;&#x3059;&#x308B;&#x305F;&#x3081;&#x3001;audit &#x5BFE;&#x8C61;&#x3068;&#x3057;&#x3066;&#x30BB;&#x30AD;&#x30E5;&#x30EA;&#x30C6;&#x30A3;&#x30ED;&#x30B0;&#x3092;&#x96C6;&#x3081;&#x3066;&#x304A;&#x304F;&#x306E;&#x304C;&#x3088;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<p>CIS Benchmark &#x306E; Remediation &#x9805;&#x76EE;&#x3092;&#x78BA;&#x8A8D;&#x3059;&#x308B;&#x3068; auditd &#x306E;&#x30EB;&#x30FC;&#x30EB;&#x306B; <code>-w /usr/bin/dockerd -k docker</code> &#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x3068;&#x3044;&#x3046;&#x5BFE;&#x5FDC;&#x65B9;&#x6CD5;&#x304C;&#x8A18;&#x8F09;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;<br>&#x305D;&#x308C;&#x306B;&#x4E57;&#x3063;&#x53D6;&#x308A;&#x3001;&#x5BFE;&#x5FDC;&#x3092;&#x884C;&#x3044;&#x3001;Audit &#x306E;&#x9805;&#x76EE;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x3066;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>ubuntu@sandbox:~$ sudo auditctl -l | grep /usr/bin/dockerd
+-w /usr/bin/dockerd -p rwxa -k docker
+</code></pre><p>&#x3053;&#x308C;&#x3067;&#x554F;&#x984C;&#x3092;&#x306A;&#x3044;&#x3088;&#x3046;&#x3067;&#x3059;&#x3002;&#x518D;&#x5EA6; docker-bench-security &#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3068; <code>[PASS]</code> &#x306B;&#x306A;&#x308B;&#x3053;&#x3068;&#x304C;&#x78BA;&#x8A8D;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="&#x30A4;&#x30E1;&#x30FC;&#x30B8;&#x3092;&#x30BB;&#x30AD;&#x30E5;&#x30A2;&#x306B;&#x3059;&#x308B;">&#x30A4;&#x30E1;&#x30FC;&#x30B8;&#x3092;&#x30BB;&#x30AD;&#x30E5;&#x30A2;&#x306B;&#x3059;&#x308B;</h2>
+<p>Docker &#x30A4;&#x30E1;&#x30FC;&#x30B8;&#x3092;&#x30BB;&#x30AD;&#x30E5;&#x30A2;&#x306B;&#x3059;&#x308B;&#x306B;&#x306F;&#x3001;<a href="../security/image/README.md">Docker &#x30A4;&#x30E1;&#x30FC;&#x30B8;&#x306E;&#x30BB;&#x30AD;&#x30E5;&#x30EA;&#x30C6;&#x30A3;</a>&#x3067;&#x7D39;&#x4ECB;&#x3057;&#x305F;&#x300C;&#x6A5F;&#x5BC6;&#x60C5;&#x5831;&#x3092;&#x542B;&#x307E;&#x305B;&#x306A;&#x3044;&#x300D;&#x300C;&#x8106;&#x5F31;&#x6027;&#x306E;&#x3042;&#x308B;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3092;&#x30A2;&#x30C3;&#x30D7;&#x30C7;&#x30FC;&#x30C8;&#x3059;&#x308B;&#x300D;&#x4EE5;&#x5916;&#x306B;&#x3082;&#x3001;&#x3044;&#x304F;&#x3064;&#x304B;&#x6C17;&#x3092;&#x3064;&#x3051;&#x308B;&#x3079;&#x304D;&#x70B9;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;<br>&#x3053;&#x308C;&#x3082; CIS Benchmark &#x306B;&#x300C;4. Container Images and Build File Configuration&#x300D;&#x3068;&#x3057;&#x3066;&#x57FA;&#x6E96;&#x304C;&#x793A;&#x3055;&#x308C;&#x3066;&#x304A;&#x308A;&#x3001;docker-security-bench &#x3067;&#x30B9;&#x30AD;&#x30E3;&#x30F3;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x3002;<br>&#x3057;&#x304B;&#x3057;&#x306A;&#x304C;&#x3089; docker-security-bench &#x3067;&#x306F;&#x30B9;&#x30B3;&#x30A2;&#x3068;&#x3057;&#x3066;&#x8A08;&#x4E0A;&#x3055;&#x308C;&#x306A;&#x3044; Not Scored &#x306A;&#x9805;&#x76EE;&#x304C;&#x3044;&#x304F;&#x3064;&#x304B;&#x5B9F;&#x88C5;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;&#x4F8B;&#x3048;&#x3070;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306A;&#x9805;&#x76EE;&#x3067;&#x3059;&#x3002;</p>
+<ul>
+<li>&#x6A5F;&#x5BC6;&#x60C5;&#x5831;&#x3092; Dockerfile &#x306B;&#x542B;&#x3081;&#x306A;&#x3044;</li>
+<li>setuid / setgid &#x3055;&#x308C;&#x305F;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x306E;&#x524A;&#x9664;</li>
+</ul>
+<p>&#x307E;&#x305F;&#x3001;CIS Benchmark &#x3067;&#x793A;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x57FA;&#x6E96;&#x4EE5;&#x5916;&#x306B;&#x3082; <code>latest</code> &#x30BF;&#x30B0;&#x3092;&#x907F;&#x3051;&#x308B;&#x3001;<code>sudo</code> &#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x306A;&#x3044;&#x306A;&#x3069;&#x306E;&#x89B3;&#x70B9;&#x3082;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;<br>&#x3053;&#x308C;&#x3089;&#x3092;&#x691C;&#x51FA;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B; goodwithtech/dockle<sup><a href="#fn_4" id="reffn_4">4</a></sup> &#x3068;&#x3044;&#x3046;&#x30C4;&#x30FC;&#x30EB;&#x304C;&#x3042;&#x308B;&#x306E;&#x3067;&#x3001;&#x7D39;&#x4ECB;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x4F8B;&#x3048;&#x3070; <code>nginx:latest</code> &#x30A4;&#x30E1;&#x30FC;&#x30B8;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3068;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306A;&#x7D50;&#x679C;&#x3092;&#x5F97;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>$ dockle nginx:latest
+ubuntu@sandbox:~$ dockle nginx:latest
+WARN    - CIS-DI-0001: Create a user for the container
+        * Last user should not be root
+WARN    - DKL-DI-0006: Avoid latest tag
+        * Avoid &apos;latest&apos; tag
+INFO    - CIS-DI-0005: Enable Content trust for Docker
+        * export DOCKER_CONTENT_TRUST=1 before docker pull/build
+INFO    - CIS-DI-0006: Add HEALTHCHECK instruction to the container image
+        * not found HEALTHCHECK statement
+INFO    - CIS-DI-0008: Confirm safety of setuid/setgid files
+        * setuid file: bin/mount urwxr-xr-x
+        * setuid file: usr/bin/gpasswd urwxr-xr-x
+        * setgid file: usr/bin/expiry grwxr-xr-x
+        * setuid file: bin/su urwxr-xr-x
+        * setgid file: usr/bin/wall grwxr-xr-x
+        * setuid file: usr/bin/chfn urwxr-xr-x
+        * setuid file: usr/bin/newgrp urwxr-xr-x
+        * setuid file: usr/bin/chsh urwxr-xr-x
+        * setuid file: bin/umount urwxr-xr-x
+        * setgid file: sbin/unix_chkpwd grwxr-xr-x
+        * setgid file: usr/bin/chage grwxr-xr-x
+        * setuid file: usr/bin/passwd urwxr-xr-x
+</code></pre><p>&#x7D50;&#x679C;&#x304B;&#x3089;&#x306F; root &#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x304C;&#x4F7F;&#x7528;&#x3055;&#x308C;&#x3066;&#x3044;&#x305F;&#x308A;&#x3001;setuid &#x3055;&#x308C;&#x305F;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x304C;&#x8907;&#x6570;&#x3042;&#x308B;&#x3053;&#x3068;&#x3092;&#x78BA;&#x8A8D;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;  </p>
+<hr>
+<blockquote id="fn_1">
+<sup>1</sup>. <a href="https://www.cisecurity.org/cis-benchmarks/" target="_blank">https://www.cisecurity.org/cis-benchmarks/</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#x21A9;</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. <a href="https://www.cisecurity.org/benchmark/docker/" target="_blank">https://www.cisecurity.org/benchmark/docker/</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#x21A9;</a>
+</blockquote>
+<blockquote id="fn_3">
+<sup>3</sup>. <a href="https://github.com/docker/docker-bench-security" target="_blank">https://github.com/docker/docker-bench-security</a><a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#x21A9;</a>
+</blockquote>
+<blockquote id="fn_4">
+<sup>4</sup>. <a href="https://github.com/goodwithtech/dockle" target="_blank">https://github.com/goodwithtech/dockle</a><a href="#reffn_4" title="Jump back to footnote [4] in the text."> &#x21A9;</a>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="monitoring.html" class="navigation navigation-prev " aria-label="Previous page: Monitoring">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../kubernetes/" class="navigation navigation-next " aria-label="Next page: Kubernetes Security">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"CIS Benchmark","level":"4.1.6","depth":2,"next":{"title":"Kubernetes Security","level":"5.1","depth":1,"path":"kubernetes/README.md","ref":"kubernetes/README.md","articles":[]},"previous":{"title":"Monitoring","level":"4.1.5","depth":2,"path":"hardening/monitoring.md","ref":"hardening/monitoring.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./source","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"hardening/cis-benchmark.md","mtime":"2020-11-15T10:28:35.836Z","type":"markdown"},"gitbook":{"version":"3.6.11","time":"2020-11-15T10:49:23.747Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

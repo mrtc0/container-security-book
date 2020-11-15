@@ -1,0 +1,829 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>seccomp Bypass · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.6.11">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="image/secrets-in-layer.html" />
+    
+    
+    <link rel="prev" href="apparmor-bypass.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">はじめに</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction.html">
+            
+                <a href="../introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">コンテナの基礎技術</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../container-basics.html">
+            
+                <a href="../container-basics.html">
+            
+                    
+                    コンテナの基礎技術
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../namespace/">
+            
+                <a href="../namespace/">
+            
+                    
+                    Namespace
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../namespace/uts.html">
+            
+                <a href="../namespace/uts.html">
+            
+                    
+                    UTS Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../namespace/pid.html">
+            
+                <a href="../namespace/pid.html">
+            
+                    
+                    PID Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../namespace/mount.html">
+            
+                <a href="../namespace/mount.html">
+            
+                    
+                    Mount Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../namespace/user.html">
+            
+                <a href="../namespace/user.html">
+            
+                    
+                    User Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../namespace/chroot-and-pivot_root.html">
+            
+                <a href="../namespace/chroot-and-pivot_root.html">
+            
+                    
+                    chroot and pivot_root
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../capability/">
+            
+                <a href="../capability/">
+            
+                    
+                    Capability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../seccomp/">
+            
+                <a href="../seccomp/">
+            
+                    
+                    Seccomp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../lsm/apparmor.html">
+            
+                <a href="../lsm/apparmor.html">
+            
+                    
+                    AppArmor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../cgroup/">
+            
+                <a href="../cgroup/">
+            
+                    
+                    cgroup
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">コンテナのセキュリティと攻撃例</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Security
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="breakout-to-host.html">
+            
+                <a href="breakout-to-host.html">
+            
+                    
+                    Breakout Container
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="sensitive-file-mount.html">
+            
+                <a href="sensitive-file-mount.html">
+            
+                    
+                    Sensitive file mount
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="DoS.html">
+            
+                <a href="DoS.html">
+            
+                    
+                    DoS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="adding-a-user-to-group.html">
+            
+                <a href="adding-a-user-to-group.html">
+            
+                    
+                    Adding a user to group
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="apparmor-bypass.html">
+            
+                <a href="apparmor-bypass.html">
+            
+                    
+                    AppArmor Bypass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.1.6" data-path="seccomp-bypass.html">
+            
+                <a href="seccomp-bypass.html">
+            
+                    
+                    seccomp Bypass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.7" data-path="image/secrets-in-layer.html">
+            
+                <a href="image/secrets-in-layer.html">
+            
+                    
+                    Secrets in Layer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.8" data-path="image/scanner.html">
+            
+                <a href="image/scanner.html">
+            
+                    
+                    Image Scanner
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Hardening Container</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../hardening/">
+            
+                <a href="../hardening/">
+            
+                    
+                    Hardening Container
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../hardening/no-new-privileges.html">
+            
+                <a href="../hardening/no-new-privileges.html">
+            
+                    
+                    No New Privileges
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../hardening/apparmor.html">
+            
+                <a href="../hardening/apparmor.html">
+            
+                    
+                    AppArmor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../hardening/seccomp.html">
+            
+                <a href="../hardening/seccomp.html">
+            
+                    
+                    seccomp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../hardening/runtime.html">
+            
+                <a href="../hardening/runtime.html">
+            
+                    
+                    runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../hardening/monitoring.html">
+            
+                <a href="../hardening/monitoring.html">
+            
+                    
+                    Monitoring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../hardening/cis-benchmark.html">
+            
+                <a href="../hardening/cis-benchmark.html">
+            
+                    
+                    CIS Benchmark
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Kubernetes Security</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../kubernetes/">
+            
+                <a href="../kubernetes/">
+            
+                    
+                    Kubernetes Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">References</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../REFERENCES.html">
+            
+                <a href="../REFERENCES.html">
+            
+                    
+                    References
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >seccomp Bypass</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="seccomp-&#x306E;&#x30D0;&#x30A4;&#x30D1;&#x30B9;">seccomp &#x306E;&#x30D0;&#x30A4;&#x30D1;&#x30B9;</h1>
+<p>seccomp &#x306F;&#x7279;&#x5B9A;&#x306E;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x30B3;&#x30FC;&#x30EB;&#x547C;&#x3073;&#x51FA;&#x3057;&#x3092;&#x5236;&#x9650;&#x3059;&#x308B;&#x6A5F;&#x69CB;&#x3067;&#x3059;&#x304C;&#x3001; <strong>Linux Kernel 4.8 &#x307E;&#x3067;</strong> &#x306F; ptrace &#x3092;&#x4F7F;&#x3046;&#x3053;&#x3068;&#x3067;&#x30D0;&#x30A4;&#x30D1;&#x30B9;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;<br>&#x3053;&#x308C;&#x306F; ptrace &#x30C8;&#x30EC;&#x30FC;&#x30B5;&#x306B;&#x901A;&#x77E5;&#x3055;&#x308C;&#x308B;&#x524D;&#xFF08;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x30B3;&#x30FC;&#x30EB;&#x304C;&#x547C;&#x3073;&#x51FA;&#x3055;&#x308C;&#x3066;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x308B;&#x524D;&#xFF09;&#x306B; seccomp &#x30D5;&#x30A3;&#x30EB;&#x30BF;&#x304C;&#x9069;&#x7528;&#x3055;&#x308C;&#x308B;&#x305F;&#x3081;&#x3001;seccomp &#x306B;&#x3088;&#x3063;&#x3066;&#x691C;&#x67FB;&#x3055;&#x308C;&#x305F;&#x5F8C;&#x306E;&#x30EC;&#x30B8;&#x30B9;&#x30BF;&#x3092;&#x5909;&#x66F4;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3001;&#x5236;&#x9650;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x30B3;&#x30FC;&#x30EB;&#x3092;&#x547C;&#x3073;&#x51FA;&#x3059;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;&#x3068;&#x3044;&#x3046;&#x4ED5;&#x7D44;&#x307F;&#x3067;&#x3059;&#x3002;</p>
+<p>&#x5177;&#x4F53;&#x7684;&#x306A;&#x624B;&#x9806;&#x3068;&#x3057;&#x3066;&#x306F;&#x6B21;&#x306E;&#x901A;&#x308A;&#x3067;&#x3059;&#x3002;</p>
+<ol>
+<li><code>fork(2)</code> &#x3067;&#x5B50;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x3067;&#x7981;&#x6B62;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x30B3;&#x30FC;&#x30EB;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x3001;&#x89AA;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x5074;&#x3067;&#x305D;&#x306E;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x30B3;&#x30FC;&#x30EB;&#x306E;&#x76E3;&#x8996;&#x3092;&#x3059;&#x308B;</li>
+<li>&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x30B3;&#x30FC;&#x30EB;&#x304C;&#x547C;&#x3070;&#x308C;&#x305F;&#x3089;&#x5225;&#x306E;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x30B3;&#x30FC;&#x30EB;&#x3092;&#x547C;&#x3073;&#x51FA;&#x3059;&#x3088;&#x3046;&#x306B;&#x30EC;&#x30B8;&#x30B9;&#x30BF;&#x3092;&#x66F8;&#x304D;&#x63DB;&#x3048;&#x308B;</li>
+<li>&#x305D;&#x306E;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x30B3;&#x30FC;&#x30EB;&#x304C;&#x547C;&#x3073;&#x51FA;&#x3055;&#x308C;&#x305F;&#x3089;&#x3001;&#x30EC;&#x30B8;&#x30B9;&#x30BF;&#x72B6;&#x614B;&#x3092;&#x5143;&#x306B;&#x623B;&#x3059;&#x3053;&#x3068;&#x3067;&#x7981;&#x6B62;&#x3055;&#x308C;&#x305F;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x30B3;&#x30FC;&#x30EB;&#x3092;&#x5B9F;&#x884C;&#x3067;&#x304D;&#x308B;</li>
+</ol>
+<p>&#x30B3;&#x30FC;&#x30C9;&#x306B;&#x3059;&#x308B;&#x3068;&#x6B21;&#x306E;&#x901A;&#x308A;&#x3067;&#x3059;&#x3002;</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;errno.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;unistd.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;ctype.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;sys/types.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;sys/stat.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;sys/user.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;sys/signal.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;sys/wait.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;sys/ptrace.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;sys/fcntl.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;syscall.h&gt;</span></span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">die</span> <span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *msg)</span>
+</span>{
+  perror(msg);
+  <span class="hljs-built_in">exit</span>(errno);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">attack</span><span class="hljs-params">()</span>
+</span>{
+  <span class="hljs-keyword">int</span> rc;
+
+  <span class="hljs-comment">// mkdir(&quot;dir&quot;, 0777);</span>
+  syscall(SYS_getpid, SYS_mkdir, <span class="hljs-string">&quot;dir&quot;</span>, <span class="hljs-number">0777</span>); <span class="hljs-comment">// &#x5F15;&#x6570;&#x90E8;&#x5206;&#x306B; SYS_mkdir &#x3068;&#x305D;&#x306E;&#x5F15;&#x6570;&#x3092;&#x4E0E;&#x3048;&#x3066;&#x304A;&#x304F;</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+  <span class="hljs-keyword">int</span> pid;
+  <span class="hljs-keyword">struct</span> user_regs_struct regs;
+  <span class="hljs-keyword">switch</span>( (pid = fork()) ) {
+    <span class="hljs-keyword">case</span> <span class="hljs-number">-1</span>:  die(<span class="hljs-string">&quot;Failed fork&quot;</span>);
+    <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>:
+              <span class="hljs-comment">// &#x89AA;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x306B;&#x30C8;&#x30EC;&#x30FC;&#x30B9;&#x3055;&#x305B;&#x308B;</span>
+              ptrace(PTRACE_TRACEME, <span class="hljs-number">0</span>, <span class="hljs-literal">NULL</span>, <span class="hljs-literal">NULL</span>);
+              kill(getpid(), SIGSTOP);
+              attack();
+              <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+  }
+
+  waitpid(pid, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+
+  <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>) {
+    <span class="hljs-keyword">int</span> st;
+    <span class="hljs-comment">// &#x5B50;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x3092;&#x518D;&#x958B;&#x3059;&#x308B;</span>
+    ptrace(PTRACE_SYSCALL, pid, <span class="hljs-literal">NULL</span>, <span class="hljs-literal">NULL</span>);
+    <span class="hljs-keyword">if</span> (waitpid(pid, &amp;st, __WALL) == <span class="hljs-number">-1</span>) {
+      <span class="hljs-keyword">break</span>;
+    }
+
+    <span class="hljs-keyword">if</span> (!(WIFSTOPPED(st) &amp;&amp; WSTOPSIG(st) == SIGTRAP)) {
+      <span class="hljs-keyword">break</span>;
+    }
+
+    ptrace(PTRACE_GETREGS, pid, <span class="hljs-literal">NULL</span>, &amp;regs);
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;orig_rax = %lld\n&quot;</span>, regs.orig_rax);
+
+    <span class="hljs-comment">// syscall-enter-stop &#x3067;&#x3042;&#x308C;&#x3070;&#x30B9;&#x30AD;&#x30C3;&#x30D7;</span>
+    <span class="hljs-keyword">if</span> (regs.rax != -ENOSYS) {
+      <span class="hljs-keyword">continue</span>;
+    }
+
+    <span class="hljs-comment">// &#x30EC;&#x30B8;&#x30B9;&#x30BF;&#x306E;&#x5185;&#x5BB9;&#x3092;&#x5909;&#x66F4;&#x3057;&#x3066;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x30B3;&#x30FC;&#x30EB;&#x3092;&#x5909;&#x66F4;&#x3059;&#x308B;</span>
+    <span class="hljs-keyword">if</span> (regs.orig_rax == SYS_getpid) {
+      regs.orig_rax = regs.rdi;
+      regs.rdi = regs.rsi;
+      regs.rsi = regs.rdx;
+      regs.rdx = regs.r10;
+      regs.r10 = regs.r8;
+      regs.r8 = regs.r9;
+      regs.r9 = <span class="hljs-number">0</span>;
+      ptrace(PTRACE_SETREGS, pid, <span class="hljs-literal">NULL</span>, &amp;regs);
+    }
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p><code>mkdir(2)</code> &#x3092;&#x7981;&#x6B62;&#x3059;&#x308B; seccomp profile &#x3092;&#x9069;&#x7528;&#x3057;&#x305F;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">$ cat seccomp.json | jq 
+{
+  <span class="hljs-string">&quot;defaultAction&quot;</span>: <span class="hljs-string">&quot;SCMP_ACT_ALLOW&quot;</span>,
+  <span class="hljs-string">&quot;syscalls&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;mkdir&quot;</span>,
+      <span class="hljs-string">&quot;action&quot;</span>: <span class="hljs-string">&quot;SCMP_ACT_ERRNO&quot;</span>,
+      <span class="hljs-string">&quot;args&quot;</span>: []
+    }
+  ]
+}
+
+$ docker run -it --security-opt seccomp:seccomp.json ubuntu:latest bash
+</code></pre>
+<p>&#x305D;&#x306E;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x306E;&#x4E2D;&#x3067;&#x4E0A;&#x8A18;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3068; seccomp &#x306E;&#x5236;&#x9650;&#x3092;&#x30D0;&#x30A4;&#x30D1;&#x30B9;&#x3057;&#x3066; <code>mkdir(2)</code> &#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x78BA;&#x8A8D;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">[root@d7799354119f tmp]<span class="hljs-comment"># mkdir dir</span>
+mkdir: cannot create directory <span class="hljs-string">&apos;dir&apos;</span>: Operation not permitted
+
+[root@d7799354119f tmp]<span class="hljs-comment"># ./a.out</span>
+orig_rax = 39
+orig_rax = 83
+orig_rax = 231
+[root@d75f3506a41d tmp]<span class="hljs-comment"># ls</span>
+a.out  dir
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="apparmor-bypass.html" class="navigation navigation-prev " aria-label="Previous page: AppArmor Bypass">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="image/secrets-in-layer.html" class="navigation navigation-next " aria-label="Next page: Secrets in Layer">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"seccomp Bypass","level":"3.1.6","depth":2,"next":{"title":"Secrets in Layer","level":"3.1.7","depth":2,"path":"security/image/secrets-in-layer.md","ref":"security/image/secrets-in-layer.md","articles":[]},"previous":{"title":"AppArmor Bypass","level":"3.1.5","depth":2,"path":"security/apparmor-bypass.md","ref":"security/apparmor-bypass.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./source","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"security/seccomp-bypass.md","mtime":"2020-11-15T05:33:36.185Z","type":"markdown"},"gitbook":{"version":"3.6.11","time":"2020-11-15T10:49:23.747Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

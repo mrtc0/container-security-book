@@ -1,0 +1,756 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>AppArmor Bypass · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.6.11">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="seccomp-bypass.html" />
+    
+    
+    <link rel="prev" href="adding-a-user-to-group.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">はじめに</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction.html">
+            
+                <a href="../introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">コンテナの基礎技術</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../container-basics.html">
+            
+                <a href="../container-basics.html">
+            
+                    
+                    コンテナの基礎技術
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../namespace/">
+            
+                <a href="../namespace/">
+            
+                    
+                    Namespace
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../namespace/uts.html">
+            
+                <a href="../namespace/uts.html">
+            
+                    
+                    UTS Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../namespace/pid.html">
+            
+                <a href="../namespace/pid.html">
+            
+                    
+                    PID Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../namespace/mount.html">
+            
+                <a href="../namespace/mount.html">
+            
+                    
+                    Mount Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../namespace/user.html">
+            
+                <a href="../namespace/user.html">
+            
+                    
+                    User Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../namespace/chroot-and-pivot_root.html">
+            
+                <a href="../namespace/chroot-and-pivot_root.html">
+            
+                    
+                    chroot and pivot_root
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../capability/">
+            
+                <a href="../capability/">
+            
+                    
+                    Capability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../seccomp/">
+            
+                <a href="../seccomp/">
+            
+                    
+                    Seccomp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../lsm/apparmor.html">
+            
+                <a href="../lsm/apparmor.html">
+            
+                    
+                    AppArmor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../cgroup/">
+            
+                <a href="../cgroup/">
+            
+                    
+                    cgroup
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">コンテナのセキュリティと攻撃例</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Security
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="breakout-to-host.html">
+            
+                <a href="breakout-to-host.html">
+            
+                    
+                    Breakout Container
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="sensitive-file-mount.html">
+            
+                <a href="sensitive-file-mount.html">
+            
+                    
+                    Sensitive file mount
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="DoS.html">
+            
+                <a href="DoS.html">
+            
+                    
+                    DoS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="adding-a-user-to-group.html">
+            
+                <a href="adding-a-user-to-group.html">
+            
+                    
+                    Adding a user to group
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.1.5" data-path="apparmor-bypass.html">
+            
+                <a href="apparmor-bypass.html">
+            
+                    
+                    AppArmor Bypass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="seccomp-bypass.html">
+            
+                <a href="seccomp-bypass.html">
+            
+                    
+                    seccomp Bypass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.7" data-path="image/secrets-in-layer.html">
+            
+                <a href="image/secrets-in-layer.html">
+            
+                    
+                    Secrets in Layer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.8" data-path="image/scanner.html">
+            
+                <a href="image/scanner.html">
+            
+                    
+                    Image Scanner
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Hardening Container</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../hardening/">
+            
+                <a href="../hardening/">
+            
+                    
+                    Hardening Container
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../hardening/no-new-privileges.html">
+            
+                <a href="../hardening/no-new-privileges.html">
+            
+                    
+                    No New Privileges
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../hardening/apparmor.html">
+            
+                <a href="../hardening/apparmor.html">
+            
+                    
+                    AppArmor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../hardening/seccomp.html">
+            
+                <a href="../hardening/seccomp.html">
+            
+                    
+                    seccomp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../hardening/runtime.html">
+            
+                <a href="../hardening/runtime.html">
+            
+                    
+                    runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../hardening/monitoring.html">
+            
+                <a href="../hardening/monitoring.html">
+            
+                    
+                    Monitoring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../hardening/cis-benchmark.html">
+            
+                <a href="../hardening/cis-benchmark.html">
+            
+                    
+                    CIS Benchmark
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Kubernetes Security</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../kubernetes/">
+            
+                <a href="../kubernetes/">
+            
+                    
+                    Kubernetes Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">References</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../REFERENCES.html">
+            
+                <a href="../REFERENCES.html">
+            
+                    
+                    References
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >AppArmor Bypass</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="apparmor-&#x306E;&#x30D0;&#x30A4;&#x30D1;&#x30B9;&#x65B9;&#x6CD5;">AppArmor &#x306E;&#x30D0;&#x30A4;&#x30D1;&#x30B9;&#x65B9;&#x6CD5;</h1>
+<p>AppArmor &#x306F;&#x8A18;&#x6CD5;&#x304C;&#x8907;&#x96D1;&#x3067;&#x3042;&#x308B;&#x305F;&#x3081;&#x3001;&#x30D0;&#x30A4;&#x30D1;&#x30B9;&#x53EF;&#x80FD;&#x306A;&#x30EB;&#x30FC;&#x30EB;&#x3092;&#x8A18;&#x8FF0;&#x3057;&#x3066;&#x3057;&#x307E;&#x3046;&#x30B1;&#x30FC;&#x30B9;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;<br>&#x3053;&#x3053;&#x3067;&#x306F;&#x3001;&#x3044;&#x304F;&#x3064;&#x304B;&#x305D;&#x308C;&#x3089;&#x306E;&#x4F8B;&#x3092;&#x793A;&#x3057;&#x305F;&#x3044;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="&#x89AA;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;-rename-&#x3059;&#x308B;">&#x89AA;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092; rename &#x3059;&#x308B;</h2>
+<p>&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B; <code>mybash</code> &#x304C; <code>.ssh/</code> &#x914D;&#x4E0B;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x64CD;&#x4F5C;&#x3067;&#x304D;&#x306A;&#x3044;&#x3088;&#x3046;&#x306A;&#x30EB;&#x30FC;&#x30EB;&#x3092;&#x8A18;&#x8FF0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;tunables/global&gt;</span></span>
+
+/home/ubuntu/mybash {
+  <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;abstractions/base&gt;</span></span>
+  file,
+
+  deny /home/ubuntu/.ssh<span class="hljs-comment">/** mrwklx,
+}
+</span></code></pre>
+<p>&#x4E00;&#x898B;&#x554F;&#x984C;&#x304C;&#x7121;&#x3044;&#x3088;&#x3046;&#x306B;&#x898B;&#x3048;&#x307E;&#x3059;&#x304C;&#x3001; <code>.ssh</code> &#x3092; rename &#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x30D0;&#x30A4;&#x30D1;&#x30B9;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">ubuntu@sandbox:~$ cat .ssh/id_rsa
+cat: .ssh/id_rsa: Permission denied
+ubuntu@sandbox:~$ mv .ssh .sshx
+ubuntu@sandbox:~$ head .sshx/id_rsa
+-----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEApQusoFpwaUZ9k8Y8b521n76ImX85uGTtrnMLTK2XDkp+AEj/
+</code></pre>
+<h2 id="shebang-&#x3092;&#x4F7F;&#x3063;&#x305F;-bypass">shebang &#x3092;&#x4F7F;&#x3063;&#x305F; bypass</h2>
+<p>&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B; mybash &#x3067; perl &#x306E;&#x5B9F;&#x884C;&#x3092;&#x7981;&#x6B62;&#x3059;&#x308B;&#x3068;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;tunables/global&gt;</span></span>
+
+/home/ubuntu/mybash {
+  <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;abstractions/base&gt;</span></span>
+  file,
+
+  deny /usr/bin/perl mrwlx,
+}
+</code></pre>
+<p>&#x3053;&#x306E;&#x5834;&#x5408; shebang &#x3092;&#x4F7F;&#x3046;&#x3053;&#x3068;&#x3067; perl &#x306E;&#x5B9F;&#x884C;&#x304C;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">ubuntu@sandbox:~$ cat test.pl
+<span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;hello\n&quot;</span>)
+ubuntu@sandbox:~$ perl ./test.pl
+mybash: /usr/bin/perl: Permission denied
+ubuntu@sandbox:~$ ./test.pl
+hello
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="adding-a-user-to-group.html" class="navigation navigation-prev " aria-label="Previous page: Adding a user to group">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="seccomp-bypass.html" class="navigation navigation-next " aria-label="Next page: seccomp Bypass">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"AppArmor Bypass","level":"3.1.5","depth":2,"next":{"title":"seccomp Bypass","level":"3.1.6","depth":2,"path":"security/seccomp-bypass.md","ref":"security/seccomp-bypass.md","articles":[]},"previous":{"title":"Adding a user to group","level":"3.1.4","depth":2,"path":"security/adding-a-user-to-group.md","ref":"security/adding-a-user-to-group.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./source","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"security/apparmor-bypass.md","mtime":"2020-11-15T05:32:40.914Z","type":"markdown"},"gitbook":{"version":"3.6.11","time":"2020-11-15T10:49:23.747Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

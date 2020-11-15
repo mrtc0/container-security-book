@@ -1,0 +1,849 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>AppArmor · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.6.11">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="seccomp.html" />
+    
+    
+    <link rel="prev" href="no-new-privileges.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">はじめに</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction.html">
+            
+                <a href="../introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">コンテナの基礎技術</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../container-basics.html">
+            
+                <a href="../container-basics.html">
+            
+                    
+                    コンテナの基礎技術
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../namespace/">
+            
+                <a href="../namespace/">
+            
+                    
+                    Namespace
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../namespace/uts.html">
+            
+                <a href="../namespace/uts.html">
+            
+                    
+                    UTS Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../namespace/pid.html">
+            
+                <a href="../namespace/pid.html">
+            
+                    
+                    PID Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../namespace/mount.html">
+            
+                <a href="../namespace/mount.html">
+            
+                    
+                    Mount Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../namespace/user.html">
+            
+                <a href="../namespace/user.html">
+            
+                    
+                    User Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../namespace/chroot-and-pivot_root.html">
+            
+                <a href="../namespace/chroot-and-pivot_root.html">
+            
+                    
+                    chroot and pivot_root
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../capability/">
+            
+                <a href="../capability/">
+            
+                    
+                    Capability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../seccomp/">
+            
+                <a href="../seccomp/">
+            
+                    
+                    Seccomp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../lsm/apparmor.html">
+            
+                <a href="../lsm/apparmor.html">
+            
+                    
+                    AppArmor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../cgroup/">
+            
+                <a href="../cgroup/">
+            
+                    
+                    cgroup
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">コンテナのセキュリティと攻撃例</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../security/">
+            
+                <a href="../security/">
+            
+                    
+                    Security
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../security/breakout-to-host.html">
+            
+                <a href="../security/breakout-to-host.html">
+            
+                    
+                    Breakout Container
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../security/sensitive-file-mount.html">
+            
+                <a href="../security/sensitive-file-mount.html">
+            
+                    
+                    Sensitive file mount
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../security/DoS.html">
+            
+                <a href="../security/DoS.html">
+            
+                    
+                    DoS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../security/adding-a-user-to-group.html">
+            
+                <a href="../security/adding-a-user-to-group.html">
+            
+                    
+                    Adding a user to group
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../security/apparmor-bypass.html">
+            
+                <a href="../security/apparmor-bypass.html">
+            
+                    
+                    AppArmor Bypass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../security/seccomp-bypass.html">
+            
+                <a href="../security/seccomp-bypass.html">
+            
+                    
+                    seccomp Bypass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.7" data-path="../security/image/secrets-in-layer.html">
+            
+                <a href="../security/image/secrets-in-layer.html">
+            
+                    
+                    Secrets in Layer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.8" data-path="../security/image/scanner.html">
+            
+                <a href="../security/image/scanner.html">
+            
+                    
+                    Image Scanner
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Hardening Container</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Hardening Container
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="no-new-privileges.html">
+            
+                <a href="no-new-privileges.html">
+            
+                    
+                    No New Privileges
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.1.2" data-path="apparmor.html">
+            
+                <a href="apparmor.html">
+            
+                    
+                    AppArmor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="seccomp.html">
+            
+                <a href="seccomp.html">
+            
+                    
+                    seccomp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="runtime.html">
+            
+                <a href="runtime.html">
+            
+                    
+                    runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="monitoring.html">
+            
+                <a href="monitoring.html">
+            
+                    
+                    Monitoring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="cis-benchmark.html">
+            
+                <a href="cis-benchmark.html">
+            
+                    
+                    CIS Benchmark
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Kubernetes Security</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../kubernetes/">
+            
+                <a href="../kubernetes/">
+            
+                    
+                    Kubernetes Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">References</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../REFERENCES.html">
+            
+                <a href="../REFERENCES.html">
+            
+                    
+                    References
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >AppArmor</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="apparmor">AppArmor</h1>
+<p>AppArmor &#x306F;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x304C;&#x4FB5;&#x5BB3;&#x3055;&#x308C;&#x3066;&#x5404;&#x4FDD;&#x8B77;&#x30EC;&#x30A4;&#x30E4;&#x3092;&#x7A81;&#x7834;&#x3055;&#x308C;&#x305F;&#x5834;&#x5408;&#x306B;&#x6700;&#x5F8C;&#x306E;&#x7826;&#x3068;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;&#x305D;&#x306E;&#x305F;&#x3081;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306B;&#x9069;&#x3057;&#x305F;&#x30D7;&#x30ED;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x9069;&#x7528;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x3092;&#x30BB;&#x30AD;&#x30E5;&#x30A2;&#x306B;&#x904B;&#x7528;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;<br>&#x4E00;&#x65B9;&#x3067;&#x3001;AppArmor &#x306F;&#x30B7;&#x30F3;&#x30BF;&#x30C3;&#x30AF;&#x30B9;&#x304C;&#x8907;&#x96D1;&#x3067;&#x3042;&#x3063;&#x305F;&#x308A;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x304C;&#x3069;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x3044;&#x308B;&#x304B;&#x628A;&#x63E1;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x3063;&#x305F;&#x308A;&#x306A;&#x3069;&#x3001;&#x30D7;&#x30ED;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x751F;&#x6210;&#x3059;&#x308B;&#x30B3;&#x30B9;&#x30C8;&#x304C;&#x304B;&#x304B;&#x308B;&#x3068;&#x3044;&#x3046;&#x9762;&#x3082;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3053;&#x3053;&#x3067;&#x306F; AppArmor &#x30D7;&#x30ED;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x6BD4;&#x8F03;&#x7684;&#x7C21;&#x5358;&#x306B;&#x751F;&#x6210;&#x3059;&#x308B;&#x65B9;&#x6CD5;&#x3092;&#x7D39;&#x4ECB;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="docker-diff-&#x3067;&#x5909;&#x66F4;&#x3055;&#x308C;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x4E00;&#x89A7;&#x3059;&#x308B;"><code>docker diff</code> &#x3067;&#x5909;&#x66F4;&#x3055;&#x308C;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x4E00;&#x89A7;&#x3059;&#x308B;</h2>
+<p><code>docker diff</code> &#x3092;&#x4F7F;&#x3046;&#x3053;&#x3068;&#x3067;&#x5909;&#x66F4;&#x3055;&#x308C;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3084;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;&#x4F8B;&#x3048;&#x3070; nginx &#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x3092;&#x8D77;&#x52D5;&#x3057;&#x3001; <code>docker diff</code> &#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306A;&#x30EA;&#x30B9;&#x30C8;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">ubuntu@sandbox:~$ docker run --rm -it nginx:latest
+...
+
+ubuntu@sandbox:~$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+ae9a66bf223e        nginx:latest        <span class="hljs-string">&quot;/docker-entrypoint.&#x2026;&quot;</span>   3 minutes ago       Up 3 minutes        80/tcp              sweet_archimedes
+ubuntu@sandbox:~$ docker diff ae9a
+C /run
+A /run/nginx.pid
+C /var
+C /var/cache
+C /var/cache/nginx
+A /var/cache/nginx/proxy_temp
+A /var/cache/nginx/scgi_temp
+A /var/cache/nginx/uwsgi_temp
+A /var/cache/nginx/client_temp
+A /var/cache/nginx/fastcgi_temp
+C /etc
+C /etc/nginx
+C /etc/nginx/conf.d
+C /etc/nginx/conf.d/default.conf
+</code></pre>
+<p>&#x305F;&#x3060;&#x3057;&#x3001;&#x3053;&#x308C;&#x306F; <strong>&#x5909;&#x66F4;&#x304C;&#x3042;&#x3063;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;</strong> &#x3092;&#x8868;&#x793A;&#x3059;&#x308B;&#x3060;&#x3051;&#x306A;&#x306E;&#x3067; <code>open</code> &#x3084; <code>read</code> &#x3055;&#x308C;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306F;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x305B;&#x3093;&#x3002;<br>&#x305D;&#x306E;&#x305F;&#x3081;&#x3001;&#x305D;&#x308C;&#x3089;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x4E00;&#x89A7;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x306B;&#x306F; eBPF &#x306A;&#x3069;&#x3092;&#x7528;&#x3044;&#x3066;&#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x30C8;&#x30EC;&#x30FC;&#x30B9;&#x3059;&#x308B;&#x306A;&#x3069;&#x306E;&#x65B9;&#x6CD5;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;  </p>
+<p>&#x4F8B;&#x3048;&#x3070; <a href="https://github.com/iovisor/bcc/blob/master/tools/opensnoop.py" title="https://github.com/iovisor/bcc/blob/master/tools/opensnoop.py" target="_blank">opensnoop.py</a> &#x76F8;&#x5F53;&#x306E;&#x6A5F;&#x80FD;&#x3092;&#x6301;&#x305F;&#x305B;&#x305F;&#x4E0A;&#x3067;&#x3001;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x306E;&#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x306E;&#x307F;&#x8868;&#x793A;&#x3059;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x3068;&#x3001;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x958B;&#x3044;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x4E00;&#x89A7;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">$ sudo ./cxray
+{<span class="hljs-string">&quot;data&quot;</span>:{<span class="hljs-string">&quot;container_id&quot;</span>:<span class="hljs-string">&quot;4604f9e03&quot;</span>,<span class="hljs-string">&quot;event&quot;</span>:{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;open&quot;</span>,<span class="hljs-string">&quot;data&quot;</span>:{<span class="hljs-string">&quot;comm&quot;</span>:<span class="hljs-string">&quot;bash&quot;</span>,<span class="hljs-string">&quot;fname&quot;</span>:<span class="hljs-string">&quot;/&quot;</span>,<span class="hljs-string">&quot;pid&quot;</span>:<span class="hljs-string">&quot;1800&quot;</span>,<span class="hljs-string">&quot;ret&quot;</span>:<span class="hljs-string">&quot;3&quot;</span>,<span class="hljs-string">&quot;uid&quot;</span>:<span class="hljs-string">&quot;0&quot;</span>}}},<span class="hljs-string">&quot;level&quot;</span>:<span class="hljs-string">&quot;info&quot;</span>,<span class="hljs-string">&quot;msg&quot;</span>:<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;time&quot;</span>:<span class="hljs-string">&quot;2020-11-15T15:31:40+09:00&quot;</span>}
+{<span class="hljs-string">&quot;data&quot;</span>:{<span class="hljs-string">&quot;container_id&quot;</span>:<span class="hljs-string">&quot;4604f9e03&quot;</span>,<span class="hljs-string">&quot;event&quot;</span>:{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;open&quot;</span>,<span class="hljs-string">&quot;data&quot;</span>:{<span class="hljs-string">&quot;comm&quot;</span>:<span class="hljs-string">&quot;cat&quot;</span>,<span class="hljs-string">&quot;fname&quot;</span>:<span class="hljs-string">&quot;/etc/ld.so.cache&quot;</span>,<span class="hljs-string">&quot;pid&quot;</span>:<span class="hljs-string">&quot;2371&quot;</span>,<span class="hljs-string">&quot;ret&quot;</span>:<span class="hljs-string">&quot;3&quot;</span>,<span class="hljs-string">&quot;uid&quot;</span>:<span class="hljs-string">&quot;0&quot;</span>}}},<span class="hljs-string">&quot;level&quot;</span>:<span class="hljs-string">&quot;info&quot;</span>,<span class="hljs-string">&quot;msg&quot;</span>:<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;time&quot;</span>:<span class="hljs-string">&quot;2020-11-15T15:31:41+09:00&quot;</span>}
+{<span class="hljs-string">&quot;data&quot;</span>:{<span class="hljs-string">&quot;container_id&quot;</span>:<span class="hljs-string">&quot;4604f9e03&quot;</span>,<span class="hljs-string">&quot;event&quot;</span>:{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;open&quot;</span>,<span class="hljs-string">&quot;data&quot;</span>:{<span class="hljs-string">&quot;comm&quot;</span>:<span class="hljs-string">&quot;cat&quot;</span>,<span class="hljs-string">&quot;fname&quot;</span>:<span class="hljs-string">&quot;/lib/x86_64-linux-gnu/libc.so.6&quot;</span>,<span class="hljs-string">&quot;pid&quot;</span>:<span class="hljs-string">&quot;2371&quot;</span>,<span class="hljs-string">&quot;ret&quot;</span>:<span class="hljs-string">&quot;3&quot;</span>,<span class="hljs-string">&quot;uid&quot;</span>:<span class="hljs-string">&quot;0&quot;</span>}}},<span class="hljs-string">&quot;level&quot;</span>:<span class="hljs-string">&quot;info&quot;</span>,<span class="hljs-string">&quot;msg&quot;</span>:<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;time&quot;</span>:<span class="hljs-string">&quot;2020-11-15T15:31:41+09:00&quot;</span>}
+{<span class="hljs-string">&quot;data&quot;</span>:{<span class="hljs-string">&quot;container_id&quot;</span>:<span class="hljs-string">&quot;4604f9e03&quot;</span>,<span class="hljs-string">&quot;event&quot;</span>:{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;open&quot;</span>,<span class="hljs-string">&quot;data&quot;</span>:{<span class="hljs-string">&quot;comm&quot;</span>:<span class="hljs-string">&quot;cat&quot;</span>,<span class="hljs-string">&quot;fname&quot;</span>:<span class="hljs-string">&quot;/etc/passwd&quot;</span>,<span class="hljs-string">&quot;pid&quot;</span>:<span class="hljs-string">&quot;2371&quot;</span>,<span class="hljs-string">&quot;ret&quot;</span>:<span class="hljs-string">&quot;3&quot;</span>,<span class="hljs-string">&quot;uid&quot;</span>:<span class="hljs-string">&quot;0&quot;</span>}}},<span class="hljs-string">&quot;level&quot;</span>:<span class="hljs-string">&quot;info&quot;</span>,<span class="hljs-string">&quot;msg&quot;</span>:<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;time&quot;</span>:<span class="hljs-string">&quot;2020-11-15T15:31:41+09:00&quot;</span>}
+</code></pre>
+<h2 id="apparmor-&#x30D7;&#x30ED;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x7C21;&#x5358;&#x306B;&#x751F;&#x6210;&#x3059;&#x308B;">AppArmor &#x30D7;&#x30ED;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x7C21;&#x5358;&#x306B;&#x751F;&#x6210;&#x3059;&#x308B;</h2>
+<p>AppArmor &#x30D7;&#x30ED;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x30B7;&#x30F3;&#x30BF;&#x30C3;&#x30AF;&#x30B9;&#x304C;&#x96E3;&#x89E3;&#x306A;&#x305F;&#x3081;&#x3001;&#x610F;&#x56F3;&#x3057;&#x306A;&#x3044;&#x8A2D;&#x5B9A;&#x3092;&#x3057;&#x3066;&#x3057;&#x307E;&#x3046;&#x3053;&#x3068;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;<br>&#x305D;&#x3053;&#x3067; <a href="https://github.com/genuinetools/bane" title="https://github.com/genuinetools/bane" target="_blank">genuinetolls/bane</a> &#x3068;&#x3044;&#x3046;&#x30C4;&#x30FC;&#x30EB;&#x3092;&#x7D39;&#x4ECB;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3053;&#x308C;&#x306F; TOML &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x7981;&#x6B62;&#x3059;&#x308B;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3084;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30D1;&#x30B9;&#x3092;&#x8A18;&#x8FF0;&#x3059;&#x308B;&#x3060;&#x3051;&#x3067; AppArmor &#x30D7;&#x30ED;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x751F;&#x6210;&#x3059;&#x308B;&#x30C4;&#x30FC;&#x30EB;&#x3067;&#x3059;&#x3002;</p>
+<p>&#x4F8B;&#x3048;&#x3070;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306A; TOML &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x7528;&#x610F;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-toml">Name = &quot;sample&quot;
+
+[Filesystem]
+# read only paths for the container
+ReadOnlyPaths = [
+    &quot;/bin/**&quot;,
+    &quot;/boot/**&quot;,
+    &quot;/dev/**&quot;,
+    &quot;/etc/**&quot;,
+    &quot;/home/**&quot;,
+    &quot;/lib/**&quot;,
+    &quot;/lib64/**&quot;,
+    &quot;/media/**&quot;,
+    &quot;/mnt/**&quot;,
+    &quot;/opt/**&quot;,
+    &quot;/proc/**&quot;,
+    &quot;/root/**&quot;,
+    &quot;/sbin/**&quot;,
+    &quot;/srv/**&quot;,
+    &quot;/tmp/**&quot;,
+    &quot;/sys/**&quot;,
+    &quot;/usr/**&quot;,
+]
+
+# paths where you want to log on write
+LogOnWritePaths = [
+    &quot;/**&quot;
+]
+
+# paths where you can write
+WritablePaths = [
+    &quot;/var/run/nginx.pid&quot;
+]
+
+# allowed executable files for the container
+AllowExec = [
+    &quot;/usr/sbin/nginx&quot;
+]
+
+# denied executable files
+DenyExec = [
+    &quot;/bin/dash&quot;,
+    &quot;/bin/sh&quot;,
+    &quot;/usr/bin/top&quot;
+]
+</code></pre>
+<p><code>bane</code> &#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x3068; AppArmor &#x30D7;&#x30ED;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x751F;&#x6210;&#x3057;&#x3001; <code>apparmor_parser</code> &#x3092;&#x5B9F;&#x884C;&#x3057;&#x3066;&#x304F;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">ubuntu@bpf:~$ sudo ./bane sample.toml
+Profile installed successfully you can now run the profile with
+`docker run --security-opt=<span class="hljs-string">&quot;apparmor:docker-sample&quot;</span>`
+ubuntu@bpf:~$ docker run --rm -it --security-opt=<span class="hljs-string">&quot;apparmor:docker-sample&quot;</span> nginx:latest bash
+root@03b91bd97550:/<span class="hljs-comment"># /bin/dash</span>
+bash: /bin/dash: Permission denied
+root@03b91bd97550:/<span class="hljs-comment"># sh</span>
+bash: /bin/sh: Permission denied
+</code></pre>
+<p>&#x307E;&#x305F;&#x3001;<code>docker-slim</code> &#x3092;&#x4F7F;&#x3063;&#x3066;&#x751F;&#x6210;&#x3059;&#x308B;&#x3053;&#x3068;&#x3082;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x3002;<code>docker-slim</code> &#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x306F; <a href="https://github.com/docker-slim/docker-slim#installation" title="https://github.com/docker-slim/docker-slim#installation" target="_blank">&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;</a> &#x3092;&#x53C2;&#x7167;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;  </p>
+<p><code>docker-slim build</code> &#x3092;&#x5B9F;&#x884C;&#x3057;&#x9069;&#x5F53;&#x306B;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x306E;&#x4E2D;&#x3067;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3059;&#x3002;&#x4ECA;&#x56DE;&#x306F; HTTP &#x30DD;&#x30FC;&#x30C8;&#x3092; Expose &#x3057;&#x306A;&#x3044;&#x305F;&#x3081; <code>--http-probe=false</code> &#x3092;&#x4E0E;&#x3048;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">ubuntu@vm:~/$ ./docker-slim build ubuntu:latest --http-probe=<span class="hljs-literal">false</span>
+docker-slim: message=<span class="hljs-string">&apos;join the Gitter channel to ask questions or to share your feedback&apos;</span> info=<span class="hljs-string">&apos;https://gitter.im/docker-slim/community&apos;</span>
+docker-slim: message=<span class="hljs-string">&apos;join the Discord server to ask questions or to share your feedback&apos;</span> info=<span class="hljs-string">&apos;https://discord.gg/9tDyxYS&apos;</span>
+docker-slim[build]: info=probe message=<span class="hljs-string">&apos;changing continue-after from probe to enter because http-probe is disabled&apos;</span>
+docker-slim[build]: state=started
+docker-slim[build]: info=params target=ubuntu:latest continue.mode=enter rt.as.user=<span class="hljs-literal">true</span> keep.perms=<span class="hljs-literal">true</span>
+docker-slim[build]: state=image.inspection.start
+docker-slim[build]: info=image id=sha256:9140108b62dc87d9b278bb0d4fd6a3e44c2959646eb966b86531306faa81b09b size.bytes=72875723 size.human=73 MB
+docker-slim[build]: info=image.stack index=0 name=<span class="hljs-string">&apos;ubuntu:latest&apos;</span> id=<span class="hljs-string">&apos;sha256:9140108b62dc87d9b278bb0d4fd6a3e44c2959646eb966b86531306faa81b09b&apos;</span>
+docker-slim[build]: state=image.inspection.done
+docker-slim[build]: state=container.inspection.start
+docker-slim[build]: info=container status=created name=dockerslimk_6887_20201115065250 id=efa234652587e1367e9572b72abf534eb4e8190c603c5a46e77177a0a78094bd
+docker-slim[build]: info=cmd.startmonitor status=sent
+docker-slim[build]: info=event.startmonitor.done status=received
+docker-slim[build]: info=container name=dockerslimk_6887_20201115065250 id=efa234652587e1367e9572b72abf534eb4e8190c603c5a46e77177a0a78094bd target.port.list=[] target.port.info=[] message=<span class="hljs-string">&apos;YOU CAN USE THESE PORTS TO INTERACT WITH THE CONTAINER&apos;</span>
+docker-slim[build]: info=continue.after mode=enter message=<span class="hljs-string">&apos;provide the expected input to allow the container inspector to continue its execution&apos;</span>
+docker-slim[build]: info=prompt message=<span class="hljs-string">&apos;USER INPUT REQUIRED, PRESS &lt;ENTER&gt; WHEN YOU ARE DONE USING THE CONTAINER&apos;</span>
+
+docker-slim[build]: state=container.inspection.finishing
+docker-slim[build]: state=container.inspection.artifact.processing
+docker-slim[build]: state=container.inspection.done
+docker-slim[build]: state=building message=<span class="hljs-string">&apos;building optimized image&apos;</span>
+docker-slim[build]: state=completed
+docker-slim[build]: info=results status=<span class="hljs-string">&apos;MINIFIED BY 9.95X [72875723 (73 MB) =&gt; 7322511 (7.3 MB)]&apos;</span>
+docker-slim[build]: info=results  image.name=ubuntu.slim image.size=<span class="hljs-string">&apos;7.3 MB&apos;</span> data=<span class="hljs-literal">true</span>
+docker-slim[build]: info=results  artifacts.location=<span class="hljs-string">&apos;/home/ubuntu/dist_linux/.docker-slim-state/images/9140108b62dc87d9b278bb0d4fd6a3e44c2959646eb966b86531306faa81b09b/artifacts&apos;</span>
+docker-slim[build]: info=results  artifacts.report=creport.json
+docker-slim[build]: info=results  artifacts.dockerfile.original=Dockerfile.fat
+docker-slim[build]: info=results  artifacts.dockerfile.new=Dockerfile
+docker-slim[build]: info=results  artifacts.seccomp=ubuntu-seccomp.json
+docker-slim[build]: info=results  artifacts.apparmor=ubuntu-apparmor-profile
+docker-slim[build]: state=<span class="hljs-keyword">done</span>
+docker-slim[build]: info=report file=<span class="hljs-string">&apos;slim.report.json&apos;</span>
+docker-slim: message=<span class="hljs-string">&apos;join the Gitter channel to ask questions or to share your feedback&apos;</span> info=<span class="hljs-string">&apos;https://gitter.im/docker-slim/community&apos;</span>
+docker-slim: message=<span class="hljs-string">&apos;join the Discord server to ask questions or to share your feedback&apos;</span> info=<span class="hljs-string">&apos;https://discord.gg/9tDyxYS&apos;</span>
+</code></pre>
+<p>&#x5B9F;&#x884C;&#x3092;&#x7D42;&#x4E86;&#x3059;&#x308B;&#x3068;&#x3001;&#x4E0A;&#x8A18;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x306B;&#x3042;&#x308B;&#x3088;&#x3046;&#x306B; <code>/home/ubuntu/dist_linux/.docker-slim-state/images/9140108b62dc87d9b278bb0d4fd6a3e44c2959646eb966b86531306faa81b09b/artifacts/ubuntu-apparmor-profile</code> &#x306B; AppArmor &#x30D7;&#x30ED;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x751F;&#x6210;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;  </p>
+<p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306B;&#x30C4;&#x30FC;&#x30EB;&#x306E;&#x624B;&#x52A9;&#x3051;&#x3092;&#x501F;&#x308A;&#x308B;&#x3068;&#x7C21;&#x5358;&#x306B;&#x30D7;&#x30ED;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x751F;&#x6210;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="no-new-privileges.html" class="navigation navigation-prev " aria-label="Previous page: No New Privileges">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="seccomp.html" class="navigation navigation-next " aria-label="Next page: seccomp">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"AppArmor","level":"4.1.2","depth":2,"next":{"title":"seccomp","level":"4.1.3","depth":2,"path":"hardening/seccomp.md","ref":"hardening/seccomp.md","articles":[]},"previous":{"title":"No New Privileges","level":"4.1.1","depth":2,"path":"hardening/no-new-privileges.md","ref":"hardening/no-new-privileges.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./source","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"hardening/apparmor.md","mtime":"2020-11-15T07:00:48.748Z","type":"markdown"},"gitbook":{"version":"3.6.11","time":"2020-11-15T10:49:23.747Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

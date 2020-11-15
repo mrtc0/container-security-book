@@ -1,0 +1,789 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>cgroup · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.6.11">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../security/" />
+    
+    
+    <link rel="prev" href="../lsm/apparmor.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">はじめに</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction.html">
+            
+                <a href="../introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">コンテナの基礎技術</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../container-basics.html">
+            
+                <a href="../container-basics.html">
+            
+                    
+                    コンテナの基礎技術
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../namespace/">
+            
+                <a href="../namespace/">
+            
+                    
+                    Namespace
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../namespace/uts.html">
+            
+                <a href="../namespace/uts.html">
+            
+                    
+                    UTS Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../namespace/pid.html">
+            
+                <a href="../namespace/pid.html">
+            
+                    
+                    PID Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../namespace/mount.html">
+            
+                <a href="../namespace/mount.html">
+            
+                    
+                    Mount Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../namespace/user.html">
+            
+                <a href="../namespace/user.html">
+            
+                    
+                    User Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../namespace/chroot-and-pivot_root.html">
+            
+                <a href="../namespace/chroot-and-pivot_root.html">
+            
+                    
+                    chroot and pivot_root
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../capability/">
+            
+                <a href="../capability/">
+            
+                    
+                    Capability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../seccomp/">
+            
+                <a href="../seccomp/">
+            
+                    
+                    Seccomp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../lsm/apparmor.html">
+            
+                <a href="../lsm/apparmor.html">
+            
+                    
+                    AppArmor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.7" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    cgroup
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">コンテナのセキュリティと攻撃例</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../security/">
+            
+                <a href="../security/">
+            
+                    
+                    Security
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../security/breakout-to-host.html">
+            
+                <a href="../security/breakout-to-host.html">
+            
+                    
+                    Breakout Container
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../security/sensitive-file-mount.html">
+            
+                <a href="../security/sensitive-file-mount.html">
+            
+                    
+                    Sensitive file mount
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../security/DoS.html">
+            
+                <a href="../security/DoS.html">
+            
+                    
+                    DoS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../security/adding-a-user-to-group.html">
+            
+                <a href="../security/adding-a-user-to-group.html">
+            
+                    
+                    Adding a user to group
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../security/apparmor-bypass.html">
+            
+                <a href="../security/apparmor-bypass.html">
+            
+                    
+                    AppArmor Bypass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../security/seccomp-bypass.html">
+            
+                <a href="../security/seccomp-bypass.html">
+            
+                    
+                    seccomp Bypass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.7" data-path="../security/image/secrets-in-layer.html">
+            
+                <a href="../security/image/secrets-in-layer.html">
+            
+                    
+                    Secrets in Layer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.8" data-path="../security/image/scanner.html">
+            
+                <a href="../security/image/scanner.html">
+            
+                    
+                    Image Scanner
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Hardening Container</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../hardening/">
+            
+                <a href="../hardening/">
+            
+                    
+                    Hardening Container
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../hardening/no-new-privileges.html">
+            
+                <a href="../hardening/no-new-privileges.html">
+            
+                    
+                    No New Privileges
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../hardening/apparmor.html">
+            
+                <a href="../hardening/apparmor.html">
+            
+                    
+                    AppArmor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../hardening/seccomp.html">
+            
+                <a href="../hardening/seccomp.html">
+            
+                    
+                    seccomp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../hardening/runtime.html">
+            
+                <a href="../hardening/runtime.html">
+            
+                    
+                    runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../hardening/monitoring.html">
+            
+                <a href="../hardening/monitoring.html">
+            
+                    
+                    Monitoring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../hardening/cis-benchmark.html">
+            
+                <a href="../hardening/cis-benchmark.html">
+            
+                    
+                    CIS Benchmark
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Kubernetes Security</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../kubernetes/">
+            
+                <a href="../kubernetes/">
+            
+                    
+                    Kubernetes Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">References</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../REFERENCES.html">
+            
+                <a href="../REFERENCES.html">
+            
+                    
+                    References
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >cgroup</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="cgroup">cgroup</h1>
+<p>cgroup &#x306F;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x3092;&#x30B0;&#x30EB;&#x30FC;&#x30D7;&#x5316;&#x3057;&#x3001;&#x305D;&#x306E;&#x30B0;&#x30EB;&#x30FC;&#x30D7;&#x306B;&#x5C5E;&#x3059;&#x308B;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x306E;&#x5236;&#x9650;&#x3092;&#x884C;&#x3046;&#x4ED5;&#x7D44;&#x307F;&#x3067;&#x3059;&#x3002;<br>cgroup &#x306F; cgroupfs &#x3068;&#x547C;&#x3070;&#x308C;&#x308B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x3092;&#x901A;&#x3057;&#x3066;&#x64CD;&#x4F5C;&#x3057;&#x307E;&#x3059;&#x3002;&#x591A;&#x304F;&#x306F; <code>/sys/fs/cgroup</code> &#x306B;&#x30DE;&#x30A6;&#x30F3;&#x30C8;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x5236;&#x9650;&#x3067;&#x304D;&#x308B;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x306E;&#x3053;&#x3068;&#x3092;&#x30B5;&#x30D6;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x3068;&#x547C;&#x3073;&#x3001;CPU &#x306E;&#x30B3;&#x30A2;&#x6570;&#x3084;&#x30E1;&#x30E2;&#x30EA;&#x4F7F;&#x7528;&#x91CF;&#x3001;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x6570;&#x306A;&#x3069;&#x3092;&#x5236;&#x9650;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;<br>&#x30B5;&#x30D6;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306B;&#x3064;&#x3044;&#x3066;&#x306F; man &#x3092;&#x3054;&#x53C2;&#x7167;&#x304F;&#x3060;&#x3055;&#x3044;<sup><a href="#fn_1" id="reffn_1">1</a></sup>&#x3002;</p>
+<h2 id="cpu-&#x306E;&#x5229;&#x7528;&#x3092;&#x5236;&#x9650;&#x3059;&#x308B;">CPU &#x306E;&#x5229;&#x7528;&#x3092;&#x5236;&#x9650;&#x3059;&#x308B;</h2>
+<p>&#x7121;&#x9650;&#x30EB;&#x30FC;&#x30D7;&#x306E;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3001;&#x305D;&#x306E;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x306B;&#x5BFE;&#x3057;&#x3066; CPU &#x5229;&#x7528;&#x7387;&#x3092;%&#x306B;&#x3057;&#x3066;&#x307F;&#x307E;&#x3059;&#x3002;<br>cgroup &#x7BA1;&#x7406;&#x4E0B;&#x306B;&#x306A;&#x3044;&#x72B6;&#x614B;&#x3067; <code>top</code> &#x3067;&#x78BA;&#x8A8D;&#x3059;&#x308B;&#x3068; 100% &#x5229;&#x7528;&#x3057;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x78BA;&#x8A8D;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">$ <span class="hljs-keyword">while</span> <span class="hljs-literal">true</span>; <span class="hljs-keyword">do</span> : ; <span class="hljs-keyword">done</span> &amp;
+[1] 16541
+
+$ top
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+  16541 ubuntu    20   0   10252   1960      0 R 100.0   0.0   0:18.27 bash
+</code></pre>
+<p>&#x3053;&#x306E;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x3092; cgroup &#x7BA1;&#x7406;&#x5316;&#x306B;&#x7F6E;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">$ sudo mkdir /sys/fs/cgroup/cpu/<span class="hljs-built_in">test</span>
+$ <span class="hljs-built_in">echo</span> 16541 | sudo tee <span class="hljs-_">-a</span> /sys/fs/cgroup/cpu/<span class="hljs-built_in">test</span>/tasks
+</code></pre>
+<p>&#x7D9A;&#x3044;&#x3066;CPU&#x5229;&#x7528;&#x7387;&#x3092;50%&#x306B;&#x3059;&#x308B;&#x3088;&#x3046;&#x306B;&#x8ABF;&#x6574;&#x3057;&#x307E;&#x3059;&#x3002;&#x3059;&#x308B;&#x3068; 50% &#x524D;&#x5F8C;&#x306B;&#x843D;&#x3061;&#x7740;&#x304F;&#x3053;&#x3068;&#x304C;&#x78BA;&#x8A8D;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">$ <span class="hljs-built_in">echo</span> 50000 | sudo tee <span class="hljs-_">-a</span> /sys/fs/cgroup/cpu/<span class="hljs-built_in">test</span>/cpu.cfs_quota_us
+50000
+$ top
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+  16541 ubuntu    20   0   10252   1960      0 R  49.8   0.0   9:48.24 bash
+</code></pre>
+<h2 id="&#x30E1;&#x30E2;&#x30EA;&#x4F7F;&#x7528;&#x91CF;&#x3092;&#x5236;&#x9650;&#x3059;&#x308B;">&#x30E1;&#x30E2;&#x30EA;&#x4F7F;&#x7528;&#x91CF;&#x3092;&#x5236;&#x9650;&#x3059;&#x308B;</h2>
+<p>&#x7D9A;&#x3044;&#x3066;&#x30E1;&#x30E2;&#x30EA;&#x4F7F;&#x7528;&#x91CF;&#x3082;200MB&#x306B;&#x5236;&#x9650;&#x3057;&#x3066;&#x307F;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">$ stress --vm 1 --vm-bytes 500M
+stress: info: [17223] dispatching hogs: 0 cpu, 0 io, 1 vm, 0 hdd
+
+$ top
+   PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+  17273 root      20   0  515860 291760    208 R 100.0   7.2   0:23.89 stress
+</code></pre>
+<p>&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x3092; cgroup &#x7BA1;&#x7406;&#x5316;&#x306B;&#x7F6E;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">$ sudo mkdir /sys/fs/cgroup/memory/<span class="hljs-built_in">test</span>
+$ <span class="hljs-built_in">echo</span> 17272 | sudo tee <span class="hljs-_">-a</span> /sys/fs/cgroup/memory/<span class="hljs-built_in">test</span>/tasks
+17273
+</code></pre>
+<p>&#x30E1;&#x30E2;&#x30EA;&#x4F7F;&#x7528;&#x91CF;&#x3092; 200MB &#x306B;&#x5236;&#x9650;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">ubuntu@docker:~$ <span class="hljs-built_in">echo</span> 200M | sudo tee <span class="hljs-_">-a</span> /sys/fs/cgroup/memory/<span class="hljs-built_in">test</span>/memory.limit_in_bytes
+200M
+</code></pre>
+<p>&#x3059;&#x308B;&#x3068; <code>stress</code> &#x304C; OOM Killer &#x306B;&#x3088;&#x3063;&#x3066; kill &#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">stress: FAIL: [17272] (415) &lt;-- worker 17273 got signal 9
+stress: WARN: [17272] (417) now reaping child worker processes
+stress: FAIL: [17272] (451) failed run completed <span class="hljs-keyword">in</span> 55s
+
+$ dmesg
+[23834.514678] oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=/,mems_allowed=0,oom_memcg=/<span class="hljs-built_in">test</span>,task_memcg=/<span class="hljs-built_in">test</span>,task=stress,pid=17273,uid=0
+[23834.514683] Memory cgroup out of memory: Killed process 17273 (stress) total-vm:515860kB, anon-rss:204432kB, file-rss:336kB, shmem-rss:0kB, UID:0 pgtables:444kB oom_score_adj:0
+[23834.519784] oom_reaper: reaped process 17273 (stress), now anon-rss:0kB, file-rss:0kB, shmem-rss:0kB
+</code></pre>
+<h1 id="docker-&#x3067;-cgroup-&#x3092;&#x4F7F;&#x3046;">docker &#x3067; cgroup &#x3092;&#x4F7F;&#x3046;</h1>
+<p>docker &#x3067;&#x306F; <code>run</code> &#x30B5;&#x30D6;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306B;&#x5BFE;&#x3057;&#x3066; <code>-c</code> &#x30D5;&#x30E9;&#x30B0;&#x3084; <code>-m</code> &#x30D5;&#x30E9;&#x30B0;&#x3092;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x5236;&#x9650;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;&#x8A73;&#x3057;&#x304F;&#x306F; <code>docker run --help</code> &#x3067;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<pre><code class="lang-sh">$ docker run --rm -it -m 100m --memory-swappiness=0 ubuntu:20.04 bash
+root@36570f483e85:/<span class="hljs-comment"># stress --vm 2 --vm-bytes 100M</span>
+stress: info: [255] dispatching hogs: 0 cpu, 0 io, 2 vm, 0 hdd
+stress: FAIL: [255] (415) &lt;-- worker 257 got signal 9
+stress: WARN: [255] (417) now reaping child worker processes
+stress: FAIL: [255] (415) &lt;-- worker 256 got signal 9
+stress: WARN: [255] (417) now reaping child worker processes
+stress: FAIL: [255] (451) failed run completed <span class="hljs-keyword">in</span> 0s
+
+$ dmesg
+[24555.596613] Memory cgroup out of memory: Killed process 17691 (stress) total-vm:106260kB, anon-rss:45456kB, file-rss:320kB, shmem-rss:0kB, UID:0 pgtables:136kB oom_score_adj:0
+[24555.596719] oom_reaper: reaped process 17692 (stress), now anon-rss:0kB, file-rss:0kB, shmem-rss:0kB
+[24555.600384] oom_reaper: reaped process 17691 (stress), now anon-rss:0kB, file-rss:0kB, shmem-rss:0kB
+
+$ cat /sys/fs/cgroup/memory/docker/36570f483e8510887b7be178fba3830f1088aa694131c89a18043ef3db220658/memory.limit_in_bytes
+104857600
+</code></pre>
+<hr>
+<blockquote id="fn_1">
+<sup>1</sup>. <a href="https://man7.org/linux/man-pages/man7/cgroups.7.html" target="_blank">https://man7.org/linux/man-pages/man7/cgroups.7.html</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#x21A9;</a>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../lsm/apparmor.html" class="navigation navigation-prev " aria-label="Previous page: AppArmor">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../security/" class="navigation navigation-next " aria-label="Next page: Security">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"cgroup","level":"2.7","depth":1,"next":{"title":"Security","level":"3.1","depth":1,"path":"security/README.md","ref":"security/README.md","articles":[{"title":"Breakout Container","level":"3.1.1","depth":2,"path":"security/breakout-to-host.md","ref":"security/breakout-to-host.md","articles":[]},{"title":"Sensitive file mount","level":"3.1.2","depth":2,"path":"security/sensitive-file-mount.md","ref":"security/sensitive-file-mount.md","articles":[]},{"title":"DoS","level":"3.1.3","depth":2,"path":"security/DoS.md","ref":"security/DoS.md","articles":[]},{"title":"Adding a user to group","level":"3.1.4","depth":2,"path":"security/adding-a-user-to-group.md","ref":"security/adding-a-user-to-group.md","articles":[]},{"title":"AppArmor Bypass","level":"3.1.5","depth":2,"path":"security/apparmor-bypass.md","ref":"security/apparmor-bypass.md","articles":[]},{"title":"seccomp Bypass","level":"3.1.6","depth":2,"path":"security/seccomp-bypass.md","ref":"security/seccomp-bypass.md","articles":[]},{"title":"Secrets in Layer","level":"3.1.7","depth":2,"path":"security/image/secrets-in-layer.md","ref":"security/image/secrets-in-layer.md","articles":[]},{"title":"Image Scanner","level":"3.1.8","depth":2,"path":"security/image/scanner.md","ref":"security/image/scanner.md","articles":[]}]},"previous":{"title":"AppArmor","level":"2.6","depth":1,"path":"lsm/apparmor.md","ref":"lsm/apparmor.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./source","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"cgroup/README.md","mtime":"2020-11-15T10:15:34.889Z","type":"markdown"},"gitbook":{"version":"3.6.11","time":"2020-11-15T10:49:23.747Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
