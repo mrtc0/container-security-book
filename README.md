@@ -10,6 +10,10 @@
 誤字脱字や間違いなどあれば https://github.com/mrtc0/container-security に Issue もしくは Pull Request を立ててください。
 ご意見、ご感想等は Twitter ハッシュタグ #container-security でツイートをお願いします。
 
+# Status
+
+この文書はまだ未完成の内容となっています。
+
 # License
 
 この書籍に記述されているすべてのソースコードは、MITライセンスに基づいたオープンソースソフトウェアとして提供されます。
