@@ -6,16 +6,17 @@ Linux Namespace はホストとの Isolation の要の一つです。
 Namespace は Linux カーネルの機能で、ホストと Namespace 内のプロセスとでリソースを分離することができます。  
 コンテナごとに Namespace を持つことで、ホストや他のコンテナとの分離を実現しています。
 
-Namespace には次の7つがあります。
+Namespace には Linux 5.9 の段階では、次の8つがあります。
 
 | Namespace | 概要 |
 |:---------:|:----:|
-| Cgroup | Namespace ごとに cgroup を作成する |
+| Cgroup | Namespace ごとに cgroup を作成する（Linux 4.6 から） |
 | IPC | IPC や POSIX message queues などを分離 |
 | Network | ネットワークデバイスやアドレスなどを分離 |
 | Mount | ファイルシステムを分離 |
-| PID | プロセスID を分離する |
-| User | UID / GID を分離する |
+| PID | プロセスID を分離する（Linux 3.8 から） |
+| Time | システムクロックの一部を分離する（Linux 5.6 から） |
+| User | UID / GID を分離する（Linux 3.8 から） |
 | UTS | hostname を分離する |
 
 例えばコンテナを作成したときにホスト側のプロセスは確認できませんし、ホスト名もホスト側とは異なります。  
