@@ -21,7 +21,7 @@ $ top
   16541 ubuntu    20   0   10252   1960      0 R 100.0   0.0   0:18.27 bash
 ```
 
-このプロセスを cgroup 管理化に置きます。
+このプロセスを cgroup 管理下に置きます。
 
 ```sh
 $ sudo mkdir /sys/fs/cgroup/cpu/test
@@ -51,7 +51,7 @@ $ top
   17273 root      20   0  515860 291760    208 R 100.0   7.2   0:23.89 stress
 ```
 
-プロセスを cgroup 管理化に置きます。
+プロセスを cgroup 管理下に置きます。
 
 ```sh
 $ sudo mkdir /sys/fs/cgroup/memory/test
