@@ -1,3 +1,0 @@
-# Kubernetes Security
-
-TBD

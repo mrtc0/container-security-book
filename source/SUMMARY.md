@@ -41,9 +41,18 @@
   * [Monitoring](hardening/monitoring.md)
   * [CIS Benchmark](hardening/cis-benchmark.md)
 
-## Kubernetes Security
+## Kubernetes のセキュリティと攻撃例
 
-* [Kubernetes Security](kubernetes/README.md)
+* [Kubernetes Security](kubernetes/security/README.md)
+  * [各種クラウドプロバイダの Metadata Service へのアクセス](kubernetes/security/metadata-service.md)
+  * [hostPath を使った Node へのエスケープ](kubernetes/security/hostpath-mount.md)
+  * [ServiceAccount の過剰な権限](kubernetes/security/service-account.md)
+  * [etcd](kubernetes/security/etcd.md)
+
+## Hardening Kubernetes
+
+* [Hardening Kubernetes](kubernetes/hardening/README.md)
+  * [Secret Management](kubernetes/hardening/secret-management.md)
 
 ## References
 
