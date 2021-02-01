@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "honkit": "^3.6.11"
+    "honkit": "3.6.11"
   }
 }
