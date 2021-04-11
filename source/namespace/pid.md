@@ -34,8 +34,8 @@ bash: kill: (1545) - No such process
 PID Namespace で `procfs` を再マウントすればよいのですが、それだとホスト側に影響を与えてしまいます。  
 そこで Mount Namespace も分離することでホスト側に影響を与えずに新しくマウントすることができます。  
 
-Mount namespace については後述するとして、 `unshare(1)` には `--mount-proc` オプションがあるため、これを利用します。  
-これにより Mount namespace を使って `procfs` をマウントしてくれます。
+Mount Namespace については後述するとして、 `unshare(1)` には `--mount-proc` オプションがあるため、これを利用します。  
+これにより Mount Namespace を使って `procfs` をマウントしてくれます。
 
 ```sh
 ubuntu@docker:~$ sudo unshare --pid --fork --mount-proc bash

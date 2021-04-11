@@ -35,7 +35,7 @@ Linux コンテナの攻撃方法やそのセキュリティについて取り�
 
 ## [Breakout Container](./security/breakout-to-host.md)
 
-コンテナからホストに脱出することは Breakout / Jailbreak / Escape と呼ばれます。Privileged コンテナなど、過剰な権限を与えた場合にホスト側に Breakout できてしまうことを攻撃例を交えて少空きします。
+コンテナからホストに脱出することは Breakout / Jailbreak / Escape と呼ばれます。Privileged コンテナなど、過剰な権限を与えた場合にホスト側に Breakout できてしまうことを攻撃例を交えて紹介します。
 
 ## [Sensitive file mount](./security/sensitive-file-mount.md)
 

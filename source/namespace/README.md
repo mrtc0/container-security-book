@@ -1,7 +1,7 @@
 # Namespace
 
 Linux Namespace はホストとの Isolation の要の一つです。  
-ここでは Linux namespace を単に Namespace あるいは名前空間と呼ぶこととします。
+ここでは Linux Namespace を単に Namespace あるいは名前空間と呼ぶこととします。
 
 Namespace は Linux カーネルの機能で、ホストと Namespace 内のプロセスとでリソースを分離することができます。  
 コンテナごとに Namespace を持つことで、ホストや他のコンテナとの分離を実現しています。

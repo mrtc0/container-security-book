@@ -61,7 +61,7 @@ ubuntu@sandbox:~$ sudo auditctl -l | grep /usr/bin/dockerd
 -w /usr/bin/dockerd -p rwxa -k docker
 ```
 
-これで問題をないようです。再度 docker-bench-security を実行すると `[PASS]` になることが確認できます。
+これで問題ないようです。再度 docker-bench-security を実行すると `[PASS]` になることが確認できます。
 
 ## イメージをセキュアにする
 
