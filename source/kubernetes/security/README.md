@@ -1,14 +1,17 @@
 # Kubernetes Security
 
-本章ではコンテナのオーケストレーションツールである Kubernetes への攻撃例を紹介します。  
-Kubernetes では多数のコンポーネントが存在しているため Attack Surfaces を理解する必要があります。
+本章ではコンテナのオーケストレーションツールである Kubernetes への攻撃例とその対策を紹介します。
+
+![Kubernetes attack vector](./img/kubernetes-attack-vector.png)
+
+この図は Kubernetes クラスタにおける攻撃ベクターを示しています。Kubernetes のコンポーネントもそうですが、Kubernetes クラスタでは CI / CD ツールやダッシュボードなども密に連携するものも多く、アクセスされるとクラスタの管理者権限を取得される可能性があるため、それらのアプリケーションへの認証認可も適切に設定する必要があります。  
+Kubernetes では多数のコンポーネントが存在しており、ここに記載している以外の攻撃経路も当然あるため、クラスタに対する Attack Surface を知ることが重要です。
 
 その理解を助けるために Microsoft が作成している ATT&CK ライクな Kubernetes attack matrix が参考になります。[^1]
 
 ![Kubernetes attack matrix](https://www.microsoft.com/security/blog/wp-content/uploads/2020/04/k8s-matrix.png)
 
-この図を見ると一口に Kubernetes セキュリティと言ってもクラスタへのアクセス制御や Pod / コンテナのセキュリティ、ネットワークなど多岐にわたります。  
-本章で全てを紹介することはできませんが、Pod に侵害された場合の権限昇格に焦点を当てて、いくつかの攻撃例と対策を紹介します。
+本章でここに記載されているすべての攻撃経路を紹介はできませんが、Kubernetes クラスタの設定ミスやコンテナが侵害された場合に焦点を当て、攻撃例とその対策を紹介します。
 
 ---
 
