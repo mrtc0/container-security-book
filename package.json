@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "honkit build",
+    "serve": "honkit serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,5 +13,9 @@
   "license": "ISC",
   "devDependencies": {
     "honkit": "3.6.17"
+  },
+  "dependencies": {
+    "gitbook-plugin-anchors": "^0.7.1",
+    "gitbook-plugin-image-captions": "^3.1.0"
   }
 }

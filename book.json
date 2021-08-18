@@ -2,5 +2,9 @@
   "root": "./source",
   "title": "Container Security Book",
   "description": "これから Linux コンテナのセキュリティを学びたい人のための文書",
-  "author": "Kohei Morita @mrtc0"
+  "author": "Kohei Morita @mrtc0",
+  "plugins": [
+    "image-captions",
+    "anchors"
+  ]
 }
