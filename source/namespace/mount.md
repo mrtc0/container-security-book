@@ -1,6 +1,6 @@
-# Mount namespace
+# Mount Namespace
 
-Mount namespace はマウントポイントを分離することができます。PID namespace では `procfs` を unshare のプロセスにだけ見えるようにマウントしました。  
+Mount Namespace はマウントポイントを分離することができます。PID namespace では `procfs` を unshare のプロセスにだけ見えるようにマウントしました。  
 このように、プロセスごとに独自のマウントポイントを持つことができます。これを利用することで、例えばプロセスごとに異なる `tmpfs` をマウントすることで、他のプロセスから一切その内容を閲覧できないようにすることができます。  
 
 `unshare(1)` では `--mount` フラグを用いることで Mount Namespace を作成できます。
