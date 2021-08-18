@@ -1,0 +1,9 @@
+.markdown-section blockquote {
+    width: 100%;
+    border-left: 4px solid #3884ff;
+    border-radius: 0.3rem;
+}
+
+blockquote blockquote {
+    padding-right: 0;
+}
