@@ -6,6 +6,8 @@ description: "これから Linux コンテナの基礎技術やセキュリテ�
 
 # Container Security Book
 
+> ⚠️この文書は製作中のものです
+
 # About
 
 これから Linux コンテナのセキュリティを学びたい人のための文書です。  
