@@ -1,7 +1,7 @@
 # References
 
 * Docker Documentaion / https://docs.docker.com/
-* LXD / https://linuxcontainers.org/lxd/docs/master/ (日本語訳: https://lxd.readthedocs.io/en/latest/)
+* LXD / https://linuxcontainers.org/lxd/docs/master/ (日本語訳: https://lxd-ja.readthedocs.io/ja/latest/)
 * Understanding and Hardening Linux Containers - NCC Group Whitepaper / https://research.nccgroup.com/wp-content/uploads/2020/07/ncc_group_understanding_hardening_linux_containers-1-1.pdf
 * Abusing Privileged and Unprivileged Linux Containers - An NCC Group Publication / https://www.nccgroup.com/globalassets/our-research/us/whitepapers/2016/june/container_whitepaper.pdf
 * コンテナ技術入門 - 仮想化との違いを知り、要素技術を触って学ぼう - エンジニアHub / https://eh-career.com/engineerhub/entry/2019/02/05/103000
