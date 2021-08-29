@@ -34,7 +34,7 @@ chroot はプロセスが `CAP_SYS_CHROOT` Capability を持っている場合�
 
 プロセスのタスク構造体には、ルートディレクトリ情報を持つ `fs->root` とカレントディレクトリ情報を持つ `fs->pwd` があります。  
 `chroot /path/to/debian` すると `fs->root` は `/path/to/debian` になります。  
-さらにその chroot 環境下で `chroot test` すると `fs->root` は `/path/to/debian/test` になるのですが、 `fs->pwd` は `/path/to/debian` のままとなり、 root が pwd の子になっている構造になてしまいます。  
+さらにその chroot 環境下で `chroot test` すると `fs->root` は `/path/to/debian/test` になるのですが、 `fs->pwd` は `/path/to/debian` のままとなり、 root が pwd の子になっている構造になってしまいます。  
 `cd ..` すると `fs->root` かどうかチェックが走りますが、このケースだと `fs->root` にマッチすることはないため、最終的に本来の root にたどり着き脱獄することができるという仕組みです。
 
 これをコードにすると次のようになります。
